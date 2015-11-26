@@ -1,3 +1,8 @@
+/*
+Name:		screenAndNunchucktest.ino
+Created:	26-Nov-15 11:27:43 AM
+Author:	Zsert
+*/
 //includes voor het scherm
 #include <digitalWriteFast.h>
 #include <GraphicsLib.h>
