@@ -12,8 +12,8 @@ Author:	Zsert
 
 //avr includes
 #include <Arduino.h>
-#include <avr\io.h>
-#include <avr\interrupt.h>
+#include <io.h>
+#include <interrupt.h>
 #include <Wire.h>
 
 
@@ -128,13 +128,13 @@ void timerSetup()
 void nunchuckInit()
 {
 	nunchuck_init();
-	Serial.println("Nunchuck is ready\n");
+	//Serial.println("Nunchuck is ready\n");
 }
 
 void basics()
 {
 	init();
-	Serial.begin(19200);
+	//Serial.begin(19200);
 	//Serial.println(vermenigvuldigFactorX);
 	//Serial.println(vermenigvuldigFactorY);
 }
