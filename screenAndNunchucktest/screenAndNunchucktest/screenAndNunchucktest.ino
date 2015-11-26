@@ -13,7 +13,7 @@ Author:	Zsert
 //avr includes
 #include <Arduino.h>
 #include <io.h>
-#include <avr>
+#include <interrupt.h>
 #include <Wire.h>
 
 
