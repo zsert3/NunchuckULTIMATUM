@@ -5,18 +5,33 @@
 */
 
 
+
+//includes voor het scherm
+#include <digitalWriteFast.h>
+#include <SPI.h>
+#include <GraphicsLib.h>
+#include <MI0283QT9.h>
+
+//avr includes
+#include <avr/io.h>
+//files
 #include "nunchuckData.h"
 #include "mainMenu.h"
-#include <digitalWriteFast\digitalWriteFast.h>
-#include <SPI\SPI.h>
-#include <GraphicsLib\GraphicsLib.h>
-#include <MI0283QT9\MI0283QT9.h>
 MI0283QT9 lcd;
 int main()
 {
+	init();
+	lcd.begin();
+	lcd.touchStartCal();
+	Serial.begin(19200);
+	lcd.setOrientation(90);
 	drawMenuScherm(lcd);
+
+
+
 	while (1)
 	{
-
+		touchScreen(lcd);
+		delay(40);
 	}
 }
