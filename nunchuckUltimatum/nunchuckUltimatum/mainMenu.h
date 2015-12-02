@@ -13,7 +13,7 @@
 #include <GraphicsLib\GraphicsLib.h>
 #include <MI0283QT9\MI0283QT9.h>
 
-void drawMenuScherm(MI0283QT9 lcd);
+void drawMenuScherm(MI0283QT9 lcd, int colour1, int colour2);
 void touchScreen(MI0283QT9 lcd);
 #endif
 

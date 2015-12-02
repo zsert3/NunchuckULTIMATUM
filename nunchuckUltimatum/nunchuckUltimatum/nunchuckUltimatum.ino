@@ -14,6 +14,8 @@
 
 //avr includes
 #include <avr/io.h>
+#include <avr/interrupt.h>
+#include <Wire\Wire.h>
 //files
 #include "nunchuckData.h"
 #include "mainMenu.h"
@@ -25,7 +27,7 @@ int main()
 	lcd.touchStartCal();
 	Serial.begin(19200);
 	lcd.setOrientation(90);
-	drawMenuScherm(lcd);
+	drawMenuScherm(lcd, RGB(123, 104, 238), RGB(154, 205, 50));
 
 
 
