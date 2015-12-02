@@ -85,4 +85,6 @@ extern "C" void __cxa_pure_virtual() {;}
 #define portInputRegister(P)
 #define portModeRegister(P)
 #include <..\nunchuckUltimatum\nunchuckUltimatum.ino>
+#include <..\nunchuckUltimatum\nunchuckData.c>
+#include <..\nunchuckUltimatum\nunchuckData.h>
 #endif
