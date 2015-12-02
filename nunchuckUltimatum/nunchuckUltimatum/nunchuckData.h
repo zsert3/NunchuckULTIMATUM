@@ -9,7 +9,7 @@
 	#include "WProgram.h"
 #endif
 void nunchuckInit(void);
-void nunchuckGetData(void);
+int nunchuckGetData(void);
 void nunchuckSendRequest(void);
 int nunchuckGetJoyX(void);
 int nunchuckGetJoyY(void);

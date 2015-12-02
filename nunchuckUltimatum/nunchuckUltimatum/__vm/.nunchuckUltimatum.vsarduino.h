@@ -12,6 +12,7 @@
 #define _VSARDUINO_H_
 #define __AVR_ATmega328p__
 #define __AVR_ATmega328P__
+#define _VMDEBUG 1
 #define F_CPU 16000000L
 #define ARDUINO 166
 #define ARDUINO_AVR_UNO
@@ -85,6 +86,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #define portInputRegister(P)
 #define portModeRegister(P)
 #include <..\nunchuckUltimatum\nunchuckUltimatum.ino>
-#include <..\nunchuckUltimatum\nunchuckData.c>
+#include <..\nunchuckUltimatum\mainMenu.cpp>
+#include <..\nunchuckUltimatum\mainMenu.h>
+#include <..\nunchuckUltimatum\nunchuckData.cpp>
 #include <..\nunchuckUltimatum\nunchuckData.h>
 #endif

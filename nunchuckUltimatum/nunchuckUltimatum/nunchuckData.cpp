@@ -3,7 +3,7 @@
 // 
 
 #include "nunchuckData.h"
-#include <Wire.h>
+#include <Wire\Wire.h>
 
 uint8_t nunchuck_buf[6];
 
@@ -21,20 +21,20 @@ void nunchuckInit(void)
 	Wire.endTransmission();// stop transmitting
 }
 
-void nunchuckGetData(void)
+int nunchuckGetData(void)
 {
 	int cnt = 0;
 	Wire.requestFrom(0x52, 6);// request data from nunchuck
 	while (Wire.available()) {
 		// receive byte as an integer
 #if (ARDUINO >= 100)
-		nunchuck_buf[cnt] = nunchuck_decode_byte(Wire.read());
+		nunchuck_buf[cnt] = nunchuckDecodeByte(Wire.read());
 #else
 		nunchuck_buf[cnt] = nunchuck_decode_byte(Wire.receive());
 #endif
 		cnt++;
 	}
-	nunchuck_send_request();  // send request for next data payload
+	nunchuckSendRequest();  // send request for next data payload
 							  // If we recieved the 6 bytes, then go print them
 	if (cnt >= 5) {
 		return 1;   // success
