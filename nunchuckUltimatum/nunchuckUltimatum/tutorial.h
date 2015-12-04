@@ -11,6 +11,6 @@
 #include <MI0283QT9\MI0283QT9.h>
 
 
-void basisschermTutorial(MI0283QT9 lcd, int colour1, int colour2, int tekstColour);
+void basisschermTutorial(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 #endif
 

@@ -4,7 +4,6 @@
  Author:	Zsert
 */
 //scherm includes
-#include <EEPROM.h>
 #include <MI0283QT9.h>
 #include <GraphicsLib.h>
 #include <SPI.h>
@@ -15,15 +14,17 @@
 #include <avr/interrupt.h>
 #include <Wire\Wire.h>
 //files
+#include "game.h"
 #include "highscores.h"
-#include "nunchuckData.h"
 #include "mainMenu.h"
 #include "tutorial.h"
 
-MI0283QT9 lcd;
-int colour1 = RGB(123, 104, 238);
-int colour2 = RGB(154, 205, 50);
-int tekstColour = RGB(160, 82, 45);
+int watercolour = RGB(123, 104, 238); //waterkleur
+int landcolour = RGB(154, 205, 50); //landkleur
+int tekstColour = RGB(160, 82, 45); //tekstkleur
+int treecolour = RGB(139, 69, 0); //boomkleur
+extern int gameStarted = 0;
+extern MI0283QT9 lcd;
 
 int main()
 {
@@ -32,12 +33,16 @@ int main()
 	Serial.begin(19200);
 	lcd.touchStartCal();
 	lcd.setOrientation(90);
-	lcd.fillScreen(colour2);
-	drawMenuScherm(lcd, colour1, colour2, tekstColour);
+	lcd.fillScreen(landcolour);
+	drawMenuScherm(lcd, watercolour, landcolour, tekstColour);
 
 	while (1)
 	{
-		touchScreen(lcd, colour1, colour2, tekstColour);
-		delay(40);
+		touchScreen(lcd, watercolour, landcolour, tekstColour);
+		if (gameStarted == 1)
+		{
+
+			//link naar bastiaan's code
+		}
 	}
 }

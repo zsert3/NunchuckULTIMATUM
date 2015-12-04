@@ -11,8 +11,8 @@
 #include "highscores.h"
 #include "tutorial.h"
 
-void drawMenuScherm(MI0283QT9 lcd, int colour1, int colour2, int tekstColour);
-void touchScreen(MI0283QT9 lcd, int colour1, int colour2, int tekstColour);
-void terugButton(MI0283QT9 lcd, int colour1, int colour2, int tekstColour);
+void drawMenuScherm(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void terugButton(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 #endif
 

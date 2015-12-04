@@ -4,8 +4,8 @@
 
 #include "tutorial.h"
 
-void basisschermTutorial(MI0283QT9 lcd, int colour1, int colour2, int tekstColour)
+void basisschermTutorial(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
 {
-	lcd.fillRect(10, 0, 220, 320, colour1);
-	lcd.drawText(60, 10, "TUTORIAL", tekstColour, colour1, 2);
+	lcd.fillRect(10, 0, 220, 320, watercolour);
+	lcd.drawText(60, 10, "TUTORIAL", tekstColour, watercolour, 2);
 }
