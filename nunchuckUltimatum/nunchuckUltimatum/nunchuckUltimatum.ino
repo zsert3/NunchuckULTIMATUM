@@ -4,6 +4,7 @@
  Author:	Zsert
 */
 //scherm includes
+#include <EEPROM.h>
 #include <MI0283QT9.h>
 #include <GraphicsLib.h>
 #include <SPI.h>
@@ -28,9 +29,10 @@ int main()
 {
 	init();
 	lcd.begin();
-	lcd.touchStartCal();
 	Serial.begin(19200);
+	lcd.touchStartCal();
 	lcd.setOrientation(90);
+	lcd.fillScreen(colour2);
 	drawMenuScherm(lcd, colour1, colour2, tekstColour);
 
 	while (1)
