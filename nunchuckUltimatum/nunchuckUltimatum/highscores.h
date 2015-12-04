@@ -8,9 +8,6 @@
 #else
 	#include "WProgram.h"
 #endif
-#include <digitalWriteFast\digitalWriteFast.h>
-#include <SPI\SPI.h>
-#include <GraphicsLib\GraphicsLib.h>
 #include <MI0283QT9\MI0283QT9.h>
 
 
