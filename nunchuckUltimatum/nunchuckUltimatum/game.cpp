@@ -18,28 +18,25 @@ obstacle obstacles1[80];
 
 void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour)
 {
-	resetboat(lcd, obstacles,watercolour, landcolour);
+	nunchuckInit();
+	resetboat(lcd,watercolour, landcolour);
 }
 
 void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour)
 {
-	Serial.println("gamestarted");
 	for (int i = 0; i < 320; i += 5) {
-		Serial.println(i);
 		if (obstacles[i] != 0) {
-			Serial.println("obstakels worden gemaakt");
 			//if((obstacles1 + i)->location != 0){			
-			//lcd.fillRect(obstacles[i] % 1000, i - 5, obstacles[i] / 100 + 8, 5, RGB(100, 149, 237)); //<-- deze kleur is het water
-			lcd.fillRect(obstacles[i] % 1000, i - 5, obstacles[i] / 100 + 8, 5, watercolour);
+			lcd.fillRect(obstacles[i] % 1000, i - 5, obstacles[i] / 100 + 8, 5, RGB(100, 149, 237)); //<-- deze kleur is het water
+			//lcd.fillRect(obstacles[i] % 1000, i - 5, obstacles[i] / 100 + 8, 5, watercolour);
 
 			//lcd.fillRect((obstacles1 + i)->location, (i - 1) * 4, (obstacles1 + i)->size, 4 , watercolour);	
 
-			//lcd.fillRect(obstacles[i] % 1000, i, obstacles[i] / 100 + 8, 6, RGB(139, 69, 0));//<-- deze kleur zijn de boomstammen
-			lcd.fillRect(obstacles[i] % 1000, i, obstacles[i] / 100 + 8, 6, treecolour);
+			lcd.fillRect(obstacles[i] % 1000, i, obstacles[i] / 100 + 8, 6, RGB(139, 69, 0));//<-- deze kleur zijn de boomstammen
+			//lcd.fillRect(obstacles[i] % 1000, i, obstacles[i] / 100 + 8, 6, treecolour);
 			//lcd.drawRect(obstacles[i] % 1000, i, obstacles[i] / 100 + 8, 5, RGB(0, 0, 0));
 			//lcd.fillRect((obstacles1 + i)->location, i * 4, (obstacles1 + i)->size, 6, treecolour);				
 		}
-		Serial.println("na obstacles");
 	}
 	if (obstacles[320] != 0)
 		lcd.fillRect(11, 315, 219, 6, watercolour);
@@ -85,16 +82,14 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour)
 
 		//}
 	}
-	Serial.println("tekenen van bootje");
 	if (nunchuckGetJoyX() == joyx && nunchuckGetJoyY() == joyy)
 		tekenboot(lcd, blocationx, blocationy);
 	//lcd.fillRect(blocationx, blocationy, 15, 25, RGB(156, 102, 31));
 	//lcd.drawRect(blocationx, blocationy, 15, 25, RGB(0, 0, 0));
 
-
 	b++;
+	Serial.println(b);
 	if (b == 55) {
-		Serial.println("is bij B");
 		b = 0;
 		int size = (rand() % 7 + 4) * 1000;
 		int location = (rand() % (10 - (size / 1000) + 12) + 1) * 10 + 1;
@@ -112,7 +107,7 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour)
 		//obstacles1->size = 0;
 	}
 
-	////check_collision(lcd, obstacles,blocationx,blocationy,watercolour, landcolour);
+	check_collision(lcd, blocationx,blocationy,watercolour, landcolour);
 	//for (int i = 0; i < 7; i++) {
 
 	//	lcd.fillRect(blocationx, blocationy + 25 + i, 15, 1, RGB(255, 255, 255));
@@ -124,9 +119,9 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour)
 	//delay(5);
 }
 
-void check_collision(MI0283QT9 lcd, int obstacles[], int blocationx, int blocationy, int watercolour, int landcolour) {
+void check_collision(MI0283QT9 lcd, int blocationx, int blocationy, int watercolour, int landcolour) {
 	if (blocationx <= 11 || blocationx >= 215) { //oever
-		resetboat(lcd, obstacles, watercolour, landcolour);
+		resetboat(lcd, watercolour, landcolour);
 		return;
 	}
 
@@ -136,27 +131,27 @@ void check_collision(MI0283QT9 lcd, int obstacles[], int blocationx, int blocati
 
 	for (int i = 0; i < 5; i++) { //voorkant
 		if (blocationx > obstacles[blocationy + i] % 1000 - 15 && blocationx + 15 < obstacles[blocationy + i] % 1000 + obstacles[blocationy + i] / 100 + 20) {
-			resetboat(lcd, obstacles, watercolour, landcolour);
+			resetboat(lcd, watercolour, landcolour);
 			return;
 		}
 	}
 
 	for (int i = 0; i < 5; i++) { //achterkant
 		if (blocationx > obstacles[blocationy + 25 + i] % 1000 - 15 && blocationx + 15 < obstacles[blocationy + 25 + i] % 1000 + obstacles[blocationy + 25 + i] / 100 + 20) {
-			resetboat(lcd, obstacles,watercolour, landcolour);
+			resetboat(lcd, watercolour, landcolour);
 			return;
 		}
 	}
 
 	for (int i = 0; i < 5; i++) { //achterkant
 		if (blocationx > obstacles[blocationy + 13 + i] % 1000 - 15 && blocationx + 15 < obstacles[blocationy + 13 + i] % 1000 + obstacles[blocationy + 13 + i] / 100 + 20) {
-			resetboat(lcd, obstacles, watercolour, landcolour);
+			resetboat(lcd, watercolour, landcolour);
 			return;
 		}
 	}
 }
 
-void resetboat(MI0283QT9 lcd, int obstacles[], int watercolour, int landcolour) {
+void resetboat(MI0283QT9 lcd, int watercolour, int landcolour) {
 	memset(obstacles, 0, sizeof(obstacles));
 	lcd.fillRect(10, 0, 220, 320, watercolour);
 	lcd.fillRect(0, 0, 10, 320, landcolour);

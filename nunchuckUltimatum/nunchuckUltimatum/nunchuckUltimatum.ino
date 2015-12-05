@@ -32,19 +32,20 @@ int main()
 	init();
 	lcd.begin();
 	Serial.begin(19200);
-	lcd.touchStartCal();
+	//lcd.touchStartCal();
 	lcd.setOrientation(90);
-	lcd.fillScreen(landcolour);
-	drawMenuScherm(lcd, watercolour, landcolour, tekstColour);
-	setGameStarted(1);
+	//lcd.fillScreen(landcolour);
+	//drawMenuScherm(lcd, watercolour, landcolour, tekstColour);
+
 	while (1)
 	{
-		//touchScreen(lcd, watercolour, landcolour, tekstColour);
-		if (getGameStarted() == 1)
+		gameInitialisation(lcd, watercolour, landcolour);
+		setGameStarted(1);
+		do
 		{
-			gameInitialisation(lcd, watercolour, landcolour);
 			game(lcd, watercolour, treecolour, landcolour);
-		}
+		} while (getGameStarted() == 1);
+		//touchScreen(lcd, watercolour, landcolour, tekstColour);
 		//setGameStarted(0);
 
 	}
