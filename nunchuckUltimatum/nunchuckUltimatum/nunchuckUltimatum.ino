@@ -19,12 +19,13 @@
 #include "mainMenu.h"
 #include "tutorial.h"
 
-int watercolour = RGB(123, 104, 238); //waterkleur
+MI0283QT9 lcd;
+//int watercolour = RGB(123, 104, 238); //waterkleur
+int watercolour = RGB(100, 149, 237); //waterkleur
+
 int landcolour = RGB(154, 205, 50); //landkleur
 int tekstColour = RGB(160, 82, 45); //tekstkleur
 int treecolour = RGB(139, 69, 0); //boomkleur
-extern int gameStarted = 0;
-extern MI0283QT9 lcd;
 
 int main()
 {
@@ -35,14 +36,16 @@ int main()
 	lcd.setOrientation(90);
 	lcd.fillScreen(landcolour);
 	drawMenuScherm(lcd, watercolour, landcolour, tekstColour);
-
+	setGameStarted(1);
 	while (1)
 	{
-		touchScreen(lcd, watercolour, landcolour, tekstColour);
-		if (gameStarted == 1)
+		//touchScreen(lcd, watercolour, landcolour, tekstColour);
+		if (getGameStarted() == 1)
 		{
-
-			//link naar bastiaan's code
+			gameInitialisation(lcd, watercolour, landcolour);
+			game(lcd, watercolour, treecolour, landcolour);
 		}
+		//setGameStarted(0);
+
 	}
 }

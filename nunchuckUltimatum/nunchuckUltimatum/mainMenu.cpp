@@ -1,6 +1,7 @@
 
 #include "mainMenu.h"
 int pushed = 0;
+int gameStarted = 0;
 
 
 
@@ -36,8 +37,8 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 		if (pushX >= 40 && pushX <= 200 && pushY >= 70 && pushY <= 110 && pushed == 0) 
 		{
 			pushed = 1;
-			lcd.fillRect(10, 0, 220, 320, RGB(123, 104, 238));
-			int gameStarted = 1;
+			lcd.fillRect(10, 0, 220, 320, watercolour);
+			gameStarted = 1;
 			for (int b = 3; b >= 1; b--)
 			{
 				for (int i = 0; i <= 400; i += 20)
@@ -78,6 +79,16 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 int getPushed()
 {
 	return pushed;
+}
+
+int getGameStarted()
+{
+	return gameStarted;
+}
+
+void setGameStarted(int gameSTArted)
+{
+	gameStarted = gameSTArted;
 }
 
 

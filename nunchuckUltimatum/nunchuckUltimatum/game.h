@@ -8,25 +8,16 @@
 #else
 	#include "WProgram.h"
 #endif
-#include <MI0283QT9\MI0283QT9.h>
+#include <MI0283QT9.h>
 #include "nunchuckData.h"
 #include "boot.h"
 
-int blocationx = 110;
-int blocationy = 270;
-int obstacles[320] = { 0 };
-//obstacle obstacles1[80];
-int joyx;
-int joyy;
-int b;
+void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour);
+void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour);
+void check_collision(MI0283QT9 lcd, int obstacles[], int blocationx, int blocationy, int watercolour, int landcolour);
+void resetboat(MI0283QT9 lcd, int obstacles[], int watercolour, int landcolour);
+void setBlocationX(int Blocationx);
+void setBlocationY(int Blocationy);
 
-typedef struct {
-	int size;
-	int location;
-}obstacle;
-
-void gameInitialisation(void);
-void game(MI0283QT9 lcd, int watercolour, int treecolour);
-void check_collision(void);
 #endif
 
