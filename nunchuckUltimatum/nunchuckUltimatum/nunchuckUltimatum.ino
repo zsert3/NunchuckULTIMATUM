@@ -35,13 +35,13 @@ int main()
 	lcd.touchStartCal();
 	lcd.setOrientation(90);
 	lcd.fillScreen(landcolour);
-	drawMenuScherm(lcd, watercolour, landcolour, tekstColour);
+	drawMenuScherm(lcd, watercolour, landcolour, tekstColour);//tekent het menuscherm
 	int i = 0;
 	while (1)
 	{
-		if (getGameStarted() == 0)
+		if (getGameStarted() == 0)//checkt als de game gestart is
 		{
-			touchScreen(lcd, watercolour, landcolour, tekstColour);
+			touchScreen(lcd, watercolour, landcolour, tekstColour);//dit zorgt s
 		}
 		//setGameStarted(0);
 		if (getGameStarted() == 1)

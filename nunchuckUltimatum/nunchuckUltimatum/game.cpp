@@ -159,7 +159,7 @@ void resetboat(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour) 
 	{
 		for (int i = 0; i <= 400; i += 20)
 		{
-			lcd.fillRect(40, i - 20, 150, 20, watercolour);
+			lcd.fillRect(10, i - 20, 220, 20, watercolour);
 			lcd.drawInteger(90, i, b, 10, tekstColour, watercolour, 10);
 		}
 	}
