@@ -48,12 +48,12 @@ int main()
 		{
 			if (i == 0)
 			{
-				gameInitialisation(lcd, watercolour, landcolour, tekstColour);
+				gameInitialisation(lcd, watercolour, landcolour, tekstColour);//game initialzation
 				i = 1;
 			}
 			do
 			{
-				game(lcd, watercolour, treecolour, landcolour, tekstColour);
+				game(lcd, watercolour, treecolour, landcolour, tekstColour);//game loop
 			} while (getGameStarted() == 1);
 		}
 		
