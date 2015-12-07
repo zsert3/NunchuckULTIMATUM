@@ -30,23 +30,15 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 	{
 		int pushX = lcd.touchX();
 		int pushY = lcd.touchY();
-		Serial.print("touchX: ");
-		Serial.println(pushX);
-		Serial.print("touchY: ");
-		Serial.println(pushY);
+		//Serial.print("touchX: ");
+		//Serial.println(pushX);
+		//Serial.print("touchY: ");
+		//Serial.println(pushY);
 		if (pushX >= 40 && pushX <= 200 && pushY >= 70 && pushY <= 110 && pushed == 0) 
 		{
 			pushed = 1;
 			lcd.fillRect(10, 0, 220, 320, watercolour);
 			gameStarted = 1;
-			for (int b = 3; b >= 1; b--)
-			{
-				for (int i = 0; i <= 400; i += 20)
-				{
-					lcd.fillRect(40, i - 20, 150, 20, watercolour);
-					lcd.drawInteger(90, i, b, 10, tekstColour, watercolour, 10);
-				}
-			}
 		}
 
 		if (pushX >= 40 && pushX <= 200 && pushY >= 150 && pushY <= 190 && pushed == 0)
