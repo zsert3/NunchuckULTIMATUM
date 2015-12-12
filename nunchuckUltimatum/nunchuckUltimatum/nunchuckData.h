@@ -13,6 +13,7 @@ int nunchuckGetData(void);
 void nunchuckSendRequest(void);
 int nunchuckGetJoyX(void);
 int nunchuckGetJoyY(void);
+int nunchuckGetc_button(void);
 char nunchuckDecodeByte(char x);
 
 #endif//nunchuckData.h
