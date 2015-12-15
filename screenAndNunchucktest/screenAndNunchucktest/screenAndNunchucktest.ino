@@ -12,8 +12,13 @@ Author:	Zsert
 
 //avr includes
 #include <Arduino.h>
+<<<<<<< HEAD
 #include <avr/io.h>
 #include <avr/interrupt.h>
+=======
+#include <avr\io.h>
+#include <avr\interrupt.h>
+>>>>>>> 11c8ba2965ea6bc884a579c1340bc5df70072cae
 #include <Wire.h>
 
 
