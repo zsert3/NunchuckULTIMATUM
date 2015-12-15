@@ -12,7 +12,6 @@
 #define _VSARDUINO_H_
 #define __AVR_ATmega328p__
 #define __AVR_ATmega328P__
-#define _VMDEBUG 1
 #define F_CPU 16000000L
 #define ARDUINO 166
 #define ARDUINO_AVR_UNO
@@ -96,6 +95,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <..\nunchuckUltimatum\mainMenu.h>
 #include <..\nunchuckUltimatum\nunchuckData.cpp>
 #include <..\nunchuckUltimatum\nunchuckData.h>
+#include <..\nunchuckUltimatum\pausescreen.cpp>
+#include <..\nunchuckUltimatum\pausescreen.h>
 #include <..\nunchuckUltimatum\tutorial.cpp>
 #include <..\nunchuckUltimatum\tutorial.h>
 #endif
