@@ -57,12 +57,12 @@ int main()
 			}
 			do
 			{
-<<<<<<< HEAD
+//<<<<<<< HEAD
 				game(lcd, watercolour, treecolour, landcolour, tekstColour);
 				pausescreen(lcd, watercolour, landcolour, tekstColour);
-=======
+//=======
 				game(lcd, watercolour, treecolour, landcolour, tekstColour);//game loop
->>>>>>> origin/master
+//>>>>>>> origin/master
 			} while (getGameStarted() == 1);
 			Serial.println("Uit de Loop");
 		}
