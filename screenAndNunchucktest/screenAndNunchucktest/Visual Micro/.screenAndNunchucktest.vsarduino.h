@@ -12,13 +12,11 @@
 #define _VSARDUINO_H_
 #define __AVR_ATmega328p__
 #define __AVR_ATmega328P__
-#define _VMDEBUG 1
 #define F_CPU 16000000L
-#define ARDUINO 10606
+#define ARDUINO 166
 #define ARDUINO_AVR_UNO
 #define ARDUINO_ARCH_AVR
 #define __cplusplus
-#define __AVR__
 #define __inline__
 #define __asm__(x)
 #define __extension__
@@ -85,19 +83,5 @@ extern "C" void __cxa_pure_virtual() {;}
 #define portOutputRegister(P)
 #define portInputRegister(P)
 #define portModeRegister(P)
-#include <..\nunchuckUltimatum\nunchuckUltimatum.ino>
-#include <..\nunchuckUltimatum\boot.cpp>
-#include <..\nunchuckUltimatum\boot.h>
-#include <..\nunchuckUltimatum\game.cpp>
-#include <..\nunchuckUltimatum\game.h>
-#include <..\nunchuckUltimatum\highscores.cpp>
-#include <..\nunchuckUltimatum\highscores.h>
-#include <..\nunchuckUltimatum\mainMenu.cpp>
-#include <..\nunchuckUltimatum\mainMenu.h>
-#include <..\nunchuckUltimatum\nunchuckData.cpp>
-#include <..\nunchuckUltimatum\nunchuckData.h>
-#include <..\nunchuckUltimatum\pausescreen.cpp>
-#include <..\nunchuckUltimatum\pausescreen.h>
-#include <..\nunchuckUltimatum\tutorial.cpp>
-#include <..\nunchuckUltimatum\tutorial.h>
+#include <screenAndNunchucktest.ino>
 #endif

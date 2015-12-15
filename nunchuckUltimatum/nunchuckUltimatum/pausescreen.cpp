@@ -91,7 +91,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 			Serial.println("MainMenu");
 			setGameStarted(0);
 			Serial.println(getGameStarted());
-			lcd.fillRect(10, 0, 220, 320, watercolour);
+			//lcd.fillRect(10, 0, 220, 320, watercolour);
 			drawMenuScherm(lcd, watercolour, landcolour, tekstcolour);
 			setpushed(0);
 			gamePaused = 0;
