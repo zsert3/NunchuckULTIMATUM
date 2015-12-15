@@ -62,6 +62,12 @@ int nunchuckGetJoyY(void)
 {
 	return nunchuck_buf[1];
 }
+
+int nunchuckGetc_button(void)
+{
+	return nunchuck_buf[5];
+}
+
 char nunchuckDecodeByte(char x)
 {
 	x = (x ^ 0x17) + 0x17;

@@ -27,12 +27,42 @@
     <ClInclude Include="mainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="highscores.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="boot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pausescreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="nunchuckData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="highscores.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pausescreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
