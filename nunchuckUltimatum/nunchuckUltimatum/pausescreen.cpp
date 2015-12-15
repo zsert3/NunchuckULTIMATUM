@@ -36,7 +36,7 @@ void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour
 			{
 
 				touchScreenPauseMenu(lcd, watercolour, landcolour, tekstcolour);
-				Serial.println("In while");
+				Serial.println(pushedPauseScreen);
 
 			}
 		}
@@ -62,6 +62,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 	{
 		int pushX = lcd.touchX();
 		int pushY = lcd.touchY();
+		pushedPauseScreen = 0;
 		//Serial.print("touchX: ");
 		//Serial.println(pushX);
 		//Serial.print("touchY: ");
@@ -90,6 +91,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 			Serial.println("MainMenu");
 			setGameStarted(0);
 			Serial.println(getGameStarted());
+			lcd.fillRect(10, 0, 220, 320, watercolour);
 			drawMenuScherm(lcd, watercolour, landcolour, tekstcolour);
 			setpushed(0);
 			gamePaused = 0;

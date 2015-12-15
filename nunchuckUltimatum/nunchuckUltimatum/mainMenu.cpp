@@ -31,6 +31,7 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 	{
 		int pushX = lcd.touchX();
 		int pushY = lcd.touchY();
+		setPauseScreenPushed(0);
 		//Serial.print("touchX: ");
 		//Serial.println(pushX);
 		//Serial.print("touchY: ");
@@ -40,7 +41,7 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 		{
 			pushed = 1;
 			lcd.fillRect(10, 0, 220, 320, watercolour);
-			setPauseScreenPushed(0);
+			
 			gameStarted = 1;
 		}
 
