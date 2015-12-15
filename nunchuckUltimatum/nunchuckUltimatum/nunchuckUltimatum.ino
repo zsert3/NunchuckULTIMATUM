@@ -4,6 +4,7 @@
  Author:	Zsert
 */
 //scherm includes
+
 #include <MI0283QT9.h>
 #include <GraphicsLib.h>
 #include <SPI.h>
@@ -19,13 +20,17 @@
 #include "mainMenu.h"
 #include "tutorial.h"
 
+
+
 MI0283QT9 lcd;
 //int watercolour = RGB(123, 104, 238); //waterkleur
 int watercolour = RGB(100, 149, 237); //waterkleur
-
+int_least16_t tp_x, tp_y;
+int_least16_t lcd_x, lcd_y, lcd_z;
 int landcolour = RGB(154, 205, 50); //landkleur
 int tekstColour = RGB(160, 82, 45); //tekstkleur
 int treecolour = RGB(139, 69, 0); //boomkleur
+
 
 int main()
 {
