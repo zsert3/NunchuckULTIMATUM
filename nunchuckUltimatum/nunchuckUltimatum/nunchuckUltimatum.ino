@@ -19,6 +19,10 @@
 #include "mainMenu.h"
 #include "tutorial.h"
 
+
+
+#include <EEPROM.h>
+
 MI0283QT9 lcd;
 //int watercolour = RGB(123, 104, 238); //waterkleur
 int watercolour = RGB(100, 149, 237); //waterkleur
