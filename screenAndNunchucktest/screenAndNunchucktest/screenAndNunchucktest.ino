@@ -12,13 +12,18 @@ Author:	Zsert
 
 //avr includes
 #include <Arduino.h>
+<<<<<<< HEAD
+#include <avr/io.h>
+#include <avr/interrupt.h>
+=======
 #include <avr\io.h>
 #include <avr\interrupt.h>
+>>>>>>> 11c8ba2965ea6bc884a579c1340bc5df70072cae
 #include <Wire.h>
 
 
 uint8_t nunchuck_buf[6];
-
+//
 
 int i;
 int joyx;
@@ -69,10 +74,12 @@ int main()
 			//Serial.println(joyy);
 			lcd.setOrientation(0);
 			lcd.drawText(10, 10, "Joystick coordinaten: ", RGB(255, 255, 255), RGB(0, 0, 0), 1);
+			
 			lcd.drawText(15, 20, "X-as ", RGB(255, 255, 255), RGB(0, 0, 0), 1);
 			lcd.drawText(100, 20, "Y-as ", RGB(255, 255, 255), RGB(0, 0, 0), 1);
 			lcd.drawInteger(25, 30, joyx, DEC, RGB(255, 255, 255), RGB(0, 0, 0), 1);
 			lcd.drawInteger(110, 30, joyy, DEC, RGB(255, 255, 255), RGB(0, 0, 0), 1);
+			//lcd.drawText(10, 10, "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm: ", RGB(255, 255, 255), RGB(0, 0, 0), 1);
 			//lcd.drawPixel(joyx, joyy, RGB(0,255,0));
 			//lcd.drawLine(joyx, 0, joyx, 320, RGB(0,255,0));
 			//lcd.drawLine(0, joyy, 320, joyy, RGB(0,0,255));
@@ -92,6 +99,8 @@ int main()
 
 void bootje(uint_least16_t x, uint_least16_t y)
 {
+	lcd.drawRect(x - 5, y - 2, 11, 15, RGB(0,0,0));
+	/*
 	lcd.drawRect(x - 5, y - 2, 11, 15, RGB(139, 69, 19));
 	lcd.drawRect(x - 4, y - 1, 9, 13, RGB(139, 35, 35));
 	lcd.drawLine(x - 3, y, x - 3, y + 10, RGB(139, 69, 19));
@@ -101,6 +110,7 @@ void bootje(uint_least16_t x, uint_least16_t y)
 	lcd.drawLine(x + 1, y, x + 1, y + 10, RGB(139, 69, 19));
 	lcd.drawLine(x + 2, y, x + 2, y + 10, RGB(139, 35, 35));
 	lcd.drawLine(x + 3, y, x + 3, y + 10, RGB(139, 69, 19));
+	*/
 }
 
 

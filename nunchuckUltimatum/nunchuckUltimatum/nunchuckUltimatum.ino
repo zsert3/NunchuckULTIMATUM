@@ -4,6 +4,9 @@
  Author:	Zsert
 */
 //scherm includes
+#include "gameover.h"
+#include "lives.h"
+#include "pausescreen.h"
 #include <MI0283QT9.h>
 #include <GraphicsLib.h>
 #include <SPI.h>
@@ -30,6 +33,7 @@ int watercolour = RGB(100, 149, 237); //waterkleur
 int landcolour = RGB(154, 205, 50); //landkleur
 int tekstColour = RGB(160, 82, 45); //tekstkleur
 int treecolour = RGB(139, 69, 0); //boomkleur
+int c_button = 0;
 
 int main()
 {
@@ -43,8 +47,10 @@ int main()
 	int i = 0;
 	while (1)
 	{
-		if (getGameStarted() == 0)//checkt als de game gestart is
+		
+		if (getGameStarted() != 1)//checkt als de game gestart is
 		{
+			Serial.println("In da if");
 			touchScreen(lcd, watercolour, landcolour, tekstColour);//dit zorgt s
 		}
 		//setGameStarted(0);
@@ -57,10 +63,13 @@ int main()
 			}
 			do
 			{
-				game(lcd, watercolour, treecolour, landcolour, tekstColour);//game loop
+				game(lcd, watercolour, treecolour, landcolour, tekstColour);
+				pausescreen(lcd, watercolour, landcolour, tekstColour);
 			} while (getGameStarted() == 1);
+			Serial.println("Uit de Loop");
 		}
 		
+
 
 	}
 }

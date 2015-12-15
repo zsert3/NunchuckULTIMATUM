@@ -22,6 +22,7 @@ void terugButton(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 {
 	lcd.fillRect(10, 290, 220, 30, landcolour);
 	lcd.drawText(100, 300, "Back", tekstColour, landcolour, 1);
+
 }
 
 void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
@@ -30,14 +31,17 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 	{
 		int pushX = lcd.touchX();
 		int pushY = lcd.touchY();
+		setPauseScreenPushed(0);
 		//Serial.print("touchX: ");
 		//Serial.println(pushX);
 		//Serial.print("touchY: ");
 		//Serial.println(pushY);
+		
 		if (pushX >= 40 && pushX <= 200 && pushY >= 70 && pushY <= 110 && pushed == 0) 
 		{
 			pushed = 1;
 			lcd.fillRect(10, 0, 220, 320, watercolour);
+			
 			gameStarted = 1;
 		}
 
@@ -61,7 +65,7 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 		if (pushX >= 40 && pushX <= 200 && pushY >= 290 && pushY <= 320 && pushed == 1)
 		{
 			lcd.fillRect(10, 290, 220, 30, watercolour);
-			lcd.drawText(100, 300, "Terug", tekstColour, watercolour, 1);
+			lcd.drawText(100, 300, "BACK", tekstColour, watercolour, 1);
 			drawMenuScherm(lcd, watercolour, landcolour, tekstColour);
 			pushed = 0;
 		}
@@ -83,4 +87,8 @@ void setGameStarted(int gameSTArted)
 	gameStarted = gameSTArted;
 }
 
+void setpushed(int Pushed)
+{
+	pushed = Pushed;
+}
 

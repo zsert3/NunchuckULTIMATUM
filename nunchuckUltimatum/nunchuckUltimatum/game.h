@@ -11,10 +11,13 @@
 #include <MI0283QT9.h>
 #include "nunchuckData.h"
 #include "boot.h"
+#include "lives.h"
+#include "mainMenu.h"
 
 void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int tekstcolour);
-void check_collision(MI0283QT9 lcd, int blocationx, int blocationy, int watercolour, int landcolour, int tekstcolour);
+//void check_collision(MI0283QT9 lcd, int blocationx, int blocationy, int watercolour, int landcolour, int tekstcolour);
+void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int watercolour, int landcolour, int tekstcolour);
 void resetboat(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 void setBlocationX(int Blocationx);
 void setBlocationY(int Blocationy);
