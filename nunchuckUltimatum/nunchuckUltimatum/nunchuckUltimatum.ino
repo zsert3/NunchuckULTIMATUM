@@ -67,6 +67,7 @@ int main()
 				pausescreen(lcd, watercolour, landcolour, tekstColour);
 			} while (getGameStarted() == 1);
 			Serial.println("Uit de Loop");
+			i = 0;
 		}
 		
 
