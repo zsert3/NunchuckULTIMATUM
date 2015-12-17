@@ -39,10 +39,10 @@
     <ClInclude Include="boot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pausescreen.h">
+    <ClInclude Include="lives.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="lives.h">
+    <ClInclude Include="pausescreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,10 +65,10 @@
     <ClCompile Include="boot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pausescreen.cpp">
+    <ClCompile Include="lives.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lives.cpp">
+    <ClCompile Include="pausescreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
