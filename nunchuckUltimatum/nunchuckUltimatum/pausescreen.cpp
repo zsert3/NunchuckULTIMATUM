@@ -94,7 +94,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 			drawMenuScherm(lcd, watercolour, landcolour, tekstcolour);
 			setpushed(0);
 			gamePaused = 0;
-			reset_lives();
+			//reset_lives();
 			
 			
 			
