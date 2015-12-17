@@ -4,9 +4,6 @@
  Author:	Zsert
 */
 //scherm includes
-#include "gameover.h"
-#include "lives.h"
-#include "pausescreen.h"
 #include <MI0283QT9.h>
 #include <GraphicsLib.h>
 #include <SPI.h>
@@ -21,6 +18,9 @@
 #include "highscores.h"
 #include "mainMenu.h"
 #include "tutorial.h"
+#include "gameover.h"
+#include "lives.h"
+#include "pausescreen.h"
 
 
 
