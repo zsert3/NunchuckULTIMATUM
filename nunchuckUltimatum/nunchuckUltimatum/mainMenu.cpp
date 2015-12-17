@@ -10,11 +10,11 @@ void drawMenuScherm(MI0283QT9 lcd, int watercolour, int landcolour, int tekstCol
 	lcd.fillRect(10, 0, 220, 320, watercolour);
 	lcd.drawText(65, 10, "AQUATIC", tekstColour, watercolour, 2);
 	lcd.drawText(75, 30, "VESSEL", tekstColour, watercolour, 2);
-	lcd.fillRoundRect(40, 70, 160, 40, 10, landcolour);
+	lcd.fillRoundRect(40, 60, 160, 40, 10, landcolour);
 	lcd.drawText(80, 87, "START GAME", tekstColour, landcolour, 1);
-	lcd.fillRoundRect(40, 150, 160, 40, 10, landcolour);
+	lcd.fillRoundRect(40, 130, 160, 40, 10, landcolour);
 	lcd.drawText(83, 167, "HIGHSCORE", tekstColour, landcolour, 1);
-	lcd.fillRoundRect(40, 230, 160, 40, 10, landcolour);
+	lcd.fillRoundRect(40, 200, 160, 40, 10, landcolour);
 	lcd.drawText(87, 248, "TUTORIAL", tekstColour, landcolour, 1);
 }
 
