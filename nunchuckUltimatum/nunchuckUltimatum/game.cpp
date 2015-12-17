@@ -28,7 +28,7 @@ void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int teks
 	nunchuckInit();
 	resetboat(lcd,watercolour, landcolour, tekstColour);
 	ledInit();
-	
+	setlives(1);
 }
 
 void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int tekstcolour)
@@ -101,6 +101,7 @@ void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int wat
 		if (get_lives() >= 3) {
 			score = 0;
 			reset_lives();
+			//setlives(0);
 			resetboat(lcd, watercolour, landcolour, tekstColour);
 			setGameStarted(0);
 			setpushed(0);

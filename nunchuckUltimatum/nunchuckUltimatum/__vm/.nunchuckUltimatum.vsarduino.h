@@ -12,8 +12,9 @@
 #define _VSARDUINO_H_
 #define __AVR_ATmega328p__
 #define __AVR_ATmega328P__
+#define _VMDEBUG 1
 #define F_CPU 16000000L
-#define ARDUINO 166
+#define ARDUINO 10606
 #define ARDUINO_AVR_UNO
 #define ARDUINO_ARCH_AVR
 #define __cplusplus
@@ -89,8 +90,6 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <..\nunchuckUltimatum\boot.h>
 #include <..\nunchuckUltimatum\game.cpp>
 #include <..\nunchuckUltimatum\game.h>
-#include <..\nunchuckUltimatum\gameover.cpp>
-#include <..\nunchuckUltimatum\gameover.h>
 #include <..\nunchuckUltimatum\highscores.cpp>
 #include <..\nunchuckUltimatum\highscores.h>
 #include <..\nunchuckUltimatum\lives.cpp>

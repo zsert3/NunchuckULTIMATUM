@@ -29,8 +29,13 @@ void remove_live() {
 }
 
 void reset_lives() {
-	lives = 1;
-	PORTC |= (1 << PORTC0) | (1 << PORTC1) | (1 << PORTC2);
+	lives = 0;
+//	//PORTC |= (1 << PORTC0) | (1 << PORTC1) | (1 << PORTC2);
+	PORTC &= ~(1 << PORTC0) | (1 << PORTC1) | (1 << PORTC2);
+}
+
+void setlives(uint8_t live) {
+	lives = live;
 }
 
 int get_lives() {

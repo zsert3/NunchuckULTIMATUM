@@ -45,9 +45,6 @@
     <ClInclude Include="lives.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gameover.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainMenu.cpp">
@@ -72,9 +69,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lives.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gameover.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
