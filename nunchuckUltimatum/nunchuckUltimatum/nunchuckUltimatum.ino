@@ -21,9 +21,7 @@
 #include "gameover.h"
 #include "lives.h"
 #include "pausescreen.h"
-
-
-
+//overig
 #include <EEPROM.h>
 
 MI0283QT9 lcd;

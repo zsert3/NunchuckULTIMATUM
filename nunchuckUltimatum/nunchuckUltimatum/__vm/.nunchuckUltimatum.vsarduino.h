@@ -90,6 +90,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <..\nunchuckUltimatum\boot.h>
 #include <..\nunchuckUltimatum\game.cpp>
 #include <..\nunchuckUltimatum\game.h>
+#include <..\nunchuckUltimatum\gameover.cpp>
+#include <..\nunchuckUltimatum\gameover.h>
 #include <..\nunchuckUltimatum\highscores.cpp>
 #include <..\nunchuckUltimatum\highscores.h>
 #include <..\nunchuckUltimatum\lives.cpp>
