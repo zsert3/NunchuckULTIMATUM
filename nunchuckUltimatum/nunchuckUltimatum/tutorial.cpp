@@ -12,17 +12,17 @@ void basisschermTutorial(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 	lcd.drawText(60, 10, "TUTORIAL", tekstColour, watercolour, 2);
 	lcd.drawText(90, 40, "Welcome", tekstColour, watercolour, 1);
 	lcd.drawText(30, 55, "to aquatic vessel!", tekstColour, watercolour, 1);
-	lcd.drawText(30, 70, "The goal is to avoid", tekstColour, watercolour, 1);
-	lcd.drawText(30, 85, "the logs in the water", tekstColour, watercolour, 1);
-	lcd.drawText(30, 100, "and get a HiScore,", tekstColour, watercolour, 1);
-	lcd.drawText(30, 115, "also be weary of", tekstColour, watercolour, 1);
-	lcd.drawText(30, 130, "the river banks.", tekstColour, watercolour, 1);
-	lcd.drawText(30, 160, "Use the nunchuck", tekstColour, watercolour, 1);
-	lcd.drawText(30, 175, "thumstick to move", tekstColour, watercolour, 1);
-	lcd.drawText(30, 190, "your boat.", tekstColour, watercolour, 1);
-	lcd.drawText(100, 220, "enjoy!", tekstColour, watercolour, 1);
+	lcd.drawText(30, 70, "Use the thumstick of", tekstColour, watercolour, 1);
+	lcd.drawText(30, 85, "the nunckuck to avoid", tekstColour, watercolour, 1);
+	lcd.drawText(30, 100, "incomming logs and", tekstColour, watercolour, 1);
+	lcd.drawText(30, 115, "the river banks.", tekstColour, watercolour, 1);
+	lcd.drawText(30, 130, "Press C to pause", tekstColour, watercolour, 1);
+	lcd.drawText(30, 145, "the game.", tekstColour, watercolour, 1);
+	lcd.drawText(30, 175, "Get that Highscore", tekstColour, watercolour, 1);
+	lcd.drawText(30, 190, "and goodluck!", tekstColour, watercolour, 1);
+	lcd.drawText(70, 220, "ENJOY!", tekstColour, watercolour, 2);
 	
-	tekenboot(lcd, 110, 240);
+	tekenboot(lcd, 110, 250);
 	
 
 	
