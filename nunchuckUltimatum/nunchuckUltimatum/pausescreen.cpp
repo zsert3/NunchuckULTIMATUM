@@ -29,7 +29,7 @@ void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour
 		gamePaused = 1;
 
 
-		while (gamePaused == 1)  // Here we start a loop to check if the touchscreen gets pushed
+		while (gamePaused == 1)  // Here we start a loop to check if the touchscreen get pushed
 		{
 			if(gamePaused != 0)
 			{
