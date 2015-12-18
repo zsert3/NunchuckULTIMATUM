@@ -8,7 +8,10 @@
 #else
 	#include "WProgram.h"
 #endif
-	
+#include <MI0283QT9.h>
+
+void basisschermGameOver(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+
 
 #endif
 

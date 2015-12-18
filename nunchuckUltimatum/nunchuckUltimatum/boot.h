@@ -8,7 +8,7 @@
 #else
 	#include "WProgram.h"
 #endif
-#include <MI0283QT9.h>
+#include <MI0283QT9\MI0283QT9.h>
 void tekenboot(MI0283QT9 lcd, int x, int y);
 
 #endif

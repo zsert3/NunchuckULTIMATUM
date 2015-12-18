@@ -10,8 +10,9 @@
 #endif
 #include "highscores.h"
 #include "tutorial.h"
-#include <MI0283QT9.h>
+#include <MI0283QT9\MI0283QT9.h>
 #include "pausescreen.h"
+#include "settings.h"
 
 void drawMenuScherm(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
