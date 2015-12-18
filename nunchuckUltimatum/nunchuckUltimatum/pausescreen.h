@@ -8,7 +8,7 @@
 #else
 	#include "WProgram.h"
 #endif
-#include <MI0283QT9.h>
+#include <MI0283QT9\MI0283QT9.h>
 #include "mainMenu.h"
 #include "nunchuckData.h"
 

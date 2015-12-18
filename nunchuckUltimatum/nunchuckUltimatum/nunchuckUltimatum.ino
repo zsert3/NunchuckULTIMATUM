@@ -33,6 +33,7 @@ int tekstColour = RGB(160, 82, 45); //tekstkleur
 int treecolour = RGB(139, 69, 0); //boomkleur
 int c_button = 0;
 
+
 int main()
 {
 	init();
@@ -48,7 +49,7 @@ int main()
 		
 		if (getGameStarted() != 1)//checkt als de game gestart is
 		{
-			Serial.println("In da if");
+			//Serial.println("In da if");
 			touchScreen(lcd, watercolour, landcolour, tekstColour);//dit zorgt s
 		}
 		//setGameStarted(0);
@@ -64,7 +65,7 @@ int main()
 				game(lcd, watercolour, treecolour, landcolour, tekstColour);
 				pausescreen(lcd, watercolour, landcolour, tekstColour);
 			} while (getGameStarted() == 1);
-			Serial.println("Uit de Loop");
+			//Serial.println("Uit de Loop");
 			i = 0;
 		}
 		
