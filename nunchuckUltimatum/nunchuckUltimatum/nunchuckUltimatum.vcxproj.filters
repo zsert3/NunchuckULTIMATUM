@@ -48,6 +48,9 @@
     <ClInclude Include="obstacles.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="eepromManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="gameover.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="obstacles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eepromManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="gameover.cpp">
