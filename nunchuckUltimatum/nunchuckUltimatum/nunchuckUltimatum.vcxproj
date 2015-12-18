@@ -76,22 +76,26 @@
   <ItemGroup>
     <ClInclude Include="boot.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="gameover.h" />
     <ClInclude Include="highscores.h" />
     <ClInclude Include="lives.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="nunchuckData.h" />
     <ClInclude Include="pausescreen.h" />
+    <ClInclude Include="settings.h" />
     <ClInclude Include="tutorial.h" />
     <ClInclude Include="__vm\.nunchuckUltimatum.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="boot.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameover.cpp" />
     <ClCompile Include="highscores.cpp" />
     <ClCompile Include="lives.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="nunchuckData.cpp" />
     <ClCompile Include="pausescreen.cpp" />
+    <ClCompile Include="settings.cpp" />
     <ClCompile Include="tutorial.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
