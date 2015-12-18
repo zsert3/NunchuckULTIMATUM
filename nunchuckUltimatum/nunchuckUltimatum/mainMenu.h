@@ -10,7 +10,7 @@
 #endif
 #include "highscores.h"
 #include "tutorial.h"
-#include <MI0283QT9.h>
+#include <MI0283QT9\MI0283QT9.h>
 #include "pausescreen.h"
 #include "settings.h"
 

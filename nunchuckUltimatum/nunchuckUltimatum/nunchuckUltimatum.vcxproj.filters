@@ -51,6 +51,9 @@
     <ClInclude Include="gameover.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MI0283QT9V2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="boot.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="gameover.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MI0283QT9V2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
