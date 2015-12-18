@@ -97,6 +97,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <..\nunchuckUltimatum\mainMenu.h>
 #include <..\nunchuckUltimatum\nunchuckData.cpp>
 #include <..\nunchuckUltimatum\nunchuckData.h>
+#include <..\nunchuckUltimatum\obstacles.cpp>
+#include <..\nunchuckUltimatum\obstacles.h>
 #include <..\nunchuckUltimatum\pausescreen.cpp>
 #include <..\nunchuckUltimatum\pausescreen.h>
 #include <..\nunchuckUltimatum\tutorial.cpp>
