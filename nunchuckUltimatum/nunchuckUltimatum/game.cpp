@@ -144,3 +144,7 @@ void setBlocationY(int Blocationy)
 {
 	blocationy = Blocationy;
 }
+void setScore(int Score)
+{
+	score = Score;
+}
