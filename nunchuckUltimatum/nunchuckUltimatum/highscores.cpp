@@ -1,28 +1,11 @@
 #include "highscores.h"
-
-
-typedef struct s_eeprom {
-	int score[5];
-} SAVED_DATA;
-SAVED_DATA EEMEM eeprom[] = { 0,0,0,0,0 };
-
-
-void restore(int *score) {
-	// Read the data from eeprom into the 'temp' version in memory
-	eeprom_read_block(score, &eeprom, sizeof(SAVED_DATA));
-}
-
-void save(int *score) {
-	// Gather all variables to be saved into the structure
-	eeprom_write_block(score, &eeprom, sizeof(SAVED_DATA));
-}
-
+#include "eepromManager.h"
 
 //ns = nieuw score
 void scoreCalculator(int ns) {
 	int score[5];
 	int i;
-	restore(score);
+	getScore(score);
 	//if it is higher then the lowest score action must be taken
 	if (ns > score[0]) {
 		i = 0;
@@ -44,7 +27,7 @@ void scoreCalculator(int ns) {
 			score[i] = ns;
 		}
 		//store score in EEPROM
-		save(score);
+		setScore(score);
 	}
 }
 
@@ -53,8 +36,7 @@ void scoreCalculator(int ns) {
 void basisschermHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
 {
 	int score[] = { 0,0,0,0,0 };	
-	restore(score);
-	
+	getScore(score);
 	int i = 4;
 	lcd.fillRect(10, 0, 220, 320, watercolour);
 	lcd.drawText(40, 10, "HIGHSCORES", tekstColour, watercolour, 2);

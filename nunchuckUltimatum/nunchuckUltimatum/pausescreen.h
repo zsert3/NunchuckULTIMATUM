@@ -11,12 +11,16 @@
 #include <MI0283QT9\MI0283QT9.h>
 #include "mainMenu.h"
 #include "nunchuckData.h"
+#include "game.h"
+#include "lives.h"
+#include "boot.h"
 
 #endif
 
 void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour);
 void drawpausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void cbuttonPushed(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 void setPauseScreenPushed(int pausePushed);
 
 
