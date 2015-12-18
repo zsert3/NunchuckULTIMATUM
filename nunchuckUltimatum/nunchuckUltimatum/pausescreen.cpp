@@ -51,6 +51,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 	{
 		cbuttonPushed(lcd, watercolour, landcolour, tekstcolour);
 		lcd.fillRect(10, 0, 220, 320, watercolour);
+		set_visable();
 		gamePaused = 0;
 		/*if (c_Button == 1)
 		{
@@ -74,7 +75,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 		{
 			pushedPauseScreen = 1;
 			Serial.println("CONTINUE");
-
+			set_visable();
 			gamePaused = 0;
 			lcd.fillRect(10, 0, 220, 320, watercolour);
 			

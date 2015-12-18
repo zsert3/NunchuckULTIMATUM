@@ -21,6 +21,8 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 //void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int watercolour, int landcolour, int tekstcolour);
 void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int watercolour, int landcolour, int tekstColour);
 void resetboat(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void setScore(int Score);
+void set_visable();
 void setBlocationX(int Blocationx);
 void setBlocationY(int Blocationy);
 
