@@ -80,7 +80,6 @@
     <ClInclude Include="highscores.h" />
     <ClInclude Include="lives.h" />
     <ClInclude Include="mainMenu.h" />
-    <ClInclude Include="MI0283QT9V2.h" />
     <ClInclude Include="nunchuckData.h" />
     <ClInclude Include="pausescreen.h" />
     <ClInclude Include="settings.h" />
@@ -94,7 +93,6 @@
     <ClCompile Include="highscores.cpp" />
     <ClCompile Include="lives.cpp" />
     <ClCompile Include="mainMenu.cpp" />
-    <ClCompile Include="MI0283QT9V2.cpp" />
     <ClCompile Include="nunchuckData.cpp" />
     <ClCompile Include="pausescreen.cpp" />
     <ClCompile Include="settings.cpp" />
