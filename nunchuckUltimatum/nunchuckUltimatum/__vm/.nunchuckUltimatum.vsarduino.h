@@ -87,8 +87,6 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <..\nunchuckUltimatum\nunchuckUltimatum.ino>
 #include <..\nunchuckUltimatum\boot.cpp>
 #include <..\nunchuckUltimatum\boot.h>
-#include <..\nunchuckUltimatum\eepromManager.cpp>
-#include <..\nunchuckUltimatum\eepromManager.h>
 #include <..\nunchuckUltimatum\game.cpp>
 #include <..\nunchuckUltimatum\game.h>
 #include <..\nunchuckUltimatum\gameover.cpp>
