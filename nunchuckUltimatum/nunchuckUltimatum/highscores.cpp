@@ -1,3 +1,6 @@
+//Gerard van Turennout
+
+
 #include "highscores.h"
 #include "eepromManager.h"
 
@@ -29,6 +32,20 @@ void scoreCalculator(int ns) {
 		//store score in EEPROM
 		setScore(score);
 	}
+}
+
+int scoreLocation(int ns) {
+	int score[5];
+	int i = 0;
+	int position = 0;
+	getScore(score);
+	//if it is higher then the lowest score action must be taken
+	while (position = 0 && i < 4) {
+		if (ns > score[i]) {
+			position = i + 1;
+		}
+	}
+	return position;
 }
 
 
