@@ -89,6 +89,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 			//MAIN  MENU button  // pushing this button returns you to the main menu
 		{
 			pushedPauseScreen = 1;
+			scoreCalculator(getScore());
 			setScore(0);
 			reset_lives();
 			//setlives(0);

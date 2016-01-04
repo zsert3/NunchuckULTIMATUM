@@ -99,6 +99,7 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int watercolour, int landcolour, int tekstColour) {
 	if (blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
 		if (get_lives() >= 3) {
+			scoreCalculator(score);
 			score = 0;
 			reset_lives();
 			//setlives(0);
@@ -150,6 +151,11 @@ void setBlocationY(int Blocationy)
 void setScore(int Score)
 {
 	score = Score;
+}
+
+int getScore()
+{
+	return score;
 }
 
 void set_visable() {
