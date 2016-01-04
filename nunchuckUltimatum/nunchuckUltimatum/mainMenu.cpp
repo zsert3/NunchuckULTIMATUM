@@ -7,6 +7,7 @@ int gameStarted = 0;
 
 void drawMenuScherm(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
 {
+	pushed = 0;
 	lcd.fillRect(10, 0, 220, 320, watercolour);
 	lcd.drawText(65, 10, "AQUATIC", tekstColour, watercolour, 2);
 	lcd.drawText(75, 30, "VESSEL", tekstColour, watercolour, 2);
@@ -72,7 +73,6 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 			lcd.fillRoundRect(40, 255, 160, 40, 10, watercolour);
 			lcd.drawText(87, 273, "SETTINGS", tekstColour, watercolour, 1);
 			basisschermSettings(lcd, watercolour, landcolour, tekstColour);
-			terugButton(lcd, watercolour, landcolour, tekstColour);
 		}
 
 		if (pushX >= 40 && pushX <= 200 && pushY >= 290 && pushY <= 320 && pushed == 1)

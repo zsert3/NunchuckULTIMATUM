@@ -1,3 +1,4 @@
+//Gerard van Turennout
 #include "eepromManager.h"
 
 typedef struct s_eeprom {
@@ -6,6 +7,8 @@ typedef struct s_eeprom {
 
 } SAVED_DATA ;
 SAVED_DATA EEMEM eeprom{0,0,0,0,0,0};
+
+
 
 void getAll(SAVED_DATA *data) {
 	// Read the data from eeprom into the 'temp' version in memory
@@ -37,6 +40,10 @@ int getBrightnes() {
 	eeprom_read_block(&data, &eeprom, sizeof(SAVED_DATA));
 	return data.brightnes;
 }
+int getMaxbrightnes() {
+	return 900;
+}
+
 void setBrightnes(int brightnes) {
 	SAVED_DATA data;
 	getAll(&data);
