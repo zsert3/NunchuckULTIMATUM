@@ -67,15 +67,15 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 			terugButton(lcd, watercolour, landcolour, tekstColour);
 		}
 
-		if (pushX >= 40 && pushX <= 200 && pushY >= 255 && pushY <= 295 && pushed == 0)
+		if (pushX >= 40 && pushX <= 200 && pushY >= 255 && pushY <= 292 && pushed == 0)
 		{
-			pushed = 1;
+			pushed = 2;
 			lcd.fillRoundRect(40, 255, 160, 40, 10, watercolour);
 			lcd.drawText(87, 273, "SETTINGS", tekstColour, watercolour, 1);
 			basisschermSettings(lcd, watercolour, landcolour, tekstColour);
 		}
 
-		if (pushX >= 40 && pushX <= 200 && pushY >= 290 && pushY <= 320 && pushed == 1)
+		if (pushX >= 40 && pushX <= 200 && pushY >= 293 && pushY <= 320 && pushed == 1)
 		{
 			lcd.fillRect(10, 290, 220, 30, watercolour);
 			lcd.drawText(100, 300, "BACK", tekstColour, watercolour, 1);

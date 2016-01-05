@@ -39,6 +39,7 @@ int main()
 	lcd.begin();
 	Serial.begin(19200);
 	calibratie();
+	setBrightnes(getBrightnes(), lcd);
 	Serial.println("test");
 	lcd.touchRead();
 	lcd.setOrientation(90);

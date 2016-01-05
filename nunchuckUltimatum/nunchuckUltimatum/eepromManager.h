@@ -20,6 +20,4 @@ void setScore(int score[5]);
 void resetScore();
 int getBrightnes();
 int getMaxbrightnes();
-void setBrightnes(int brightnes);
-void writeCalData(MI0283QT9 lcd);
-uint8_t readCalData(MI0283QT9 lcd);
+void setBrightnes(int brightnes, MI0283QT9 lcd);
