@@ -4,9 +4,8 @@
 typedef struct s_eeprom {
 	int	brightnes;
 	int score[5];
-
 } SAVED_DATA ;
-SAVED_DATA EEMEM eeprom{0,0,0,0,0,0};
+SAVED_DATA EEMEM eeprom = { 0 };
 
 
 

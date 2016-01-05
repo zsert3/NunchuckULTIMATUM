@@ -15,5 +15,4 @@ void basisschermGameOver(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 	lcd.drawText(87, 228, "MAIN MENU", tekstcolour, landcolour, 1);
 
 
-
 }

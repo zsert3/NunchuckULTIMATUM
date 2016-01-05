@@ -35,10 +35,10 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 		int pushX = lcd.touchX();
 		int pushY = lcd.touchY();
 		setPauseScreenPushed(0);
-		Serial.print("touchX: ");
-		Serial.println(pushX);
-		Serial.print("touchY: ");
-		Serial.println(pushY);
+		//Serial.print("touchX: ");
+		//Serial.println(pushX);
+		//Serial.print("touchY: ");
+		//Serial.println(pushY);
 		
 		if (pushX >= 40 && pushX <= 200 && pushY >= 60 && pushY <= 100 && pushed == 0) 
 		{
