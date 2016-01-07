@@ -14,6 +14,7 @@
 #include "lives.h"
 #include "mainMenu.h"
 #include "obstacles.h"
+#include "gameover.h"
 
 void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int tekstcolour);
