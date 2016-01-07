@@ -25,7 +25,7 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 	nunchuckGetData();
 	joyx = nunchuckGetJoyX();
 	joyy = nunchuckGetJoyY();
-
+	
 	//nunchuck omhoog
 	if (joyy > 145) {
 		if (blocationy > 0) {
@@ -92,7 +92,10 @@ void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int wat
 			resetboat(lcd, watercolour, landcolour, tekstColour);
 			setGameStarted(0);
 			setpushed(0);
-			drawMenuScherm(lcd, watercolour, landcolour, tekstColour);
+			//hier moet het game over scherm komen
+			basisschermGameOver(lcd, watercolour, landcolour, tekstColour);
+			score = 0;
+			Serial.println("gamefile");
 			return;
 		}
 		else {
