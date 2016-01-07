@@ -33,8 +33,10 @@ void placeSlider(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 
 	int maxBrightnes = getMaxbrightnes();
 	int currentBrightness = getBrightnes();
+	Serial.print("helderheid: ");
+	Serial.println(currentBrightness);
 	int size = barLength /(900.0 / currentBrightness);
-
+	setBrightness(lcd, currentBrightness);
 	//lcd.fillRect(lcX, lcY, slidersizeX, slidersizeY, landcolour);
 	lcd.fillRect(lcX, lcY+(slidersizeY/4), slidersizeX, slidersizeY/2+ barthickness, landcolour);
 	lcd.fillRect(lcX + (slidersizeX - barLength) / 2, barpositionY * 2, barLength, slidersizeY / 2, landcolour);
@@ -44,9 +46,12 @@ void placeSlider(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 	//lcd.drawText(lcX + (buttonsizeX / 2) - (arrSize * 4), lcY + buttonsizeY, text, tekstColour, landcolour, 1);
 }
 
+void setBrightness(MI0283QT9 lcd, int currentBrightness) {
+	lcd.led(getBrightnes() * 0.111 + 5);
+}
+
 
 int brightness() {
-
 }
 
 

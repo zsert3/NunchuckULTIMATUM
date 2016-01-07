@@ -23,6 +23,8 @@ typedef struct {
 	uint8_t osize;
 	uint16_t olocationy;
 	uint8_t olocationx;
+	uint8_t omoving;
+	int8_t odirection;
 }obstacles;
 
 #endif

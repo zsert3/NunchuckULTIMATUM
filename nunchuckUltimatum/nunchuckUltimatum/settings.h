@@ -12,6 +12,7 @@
 #include <avr/io.h>
 
 void basisschermSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void setBrightness(MI0283QT9 lcd, int currentBrightness);
 
 #endif
 
