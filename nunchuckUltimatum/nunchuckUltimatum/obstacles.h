@@ -10,14 +10,15 @@
 #endif
 #include <MI0283QT9.h>
 
-void draw_obstacles(MI0283QT9 lcd);
-void shift_obstacles(MI0283QT9 lcd);
-void reset_obstacles();
-void set_obstaclespeed(uint8_t speed);
-uint8_t get_obstaclespeed();
-uint8_t get_obstaclex(uint8_t i);
-uint16_t get_obstacley(uint8_t i);
-uint8_t get_obstacles(uint8_t i);
+void drawObstacles(MI0283QT9 lcd);
+void shiftObstacles(MI0283QT9 lcd);
+void resetObstacles();
+void setObstaclespeed(uint8_t speed);
+void increaseObstaclespeed();
+uint8_t getObstaclespeed();
+uint8_t getObstaclex(uint8_t i);
+uint16_t getObstacley(uint8_t i);
+uint8_t getObstacles(uint8_t i);
 
 typedef struct {
 	uint8_t osize;

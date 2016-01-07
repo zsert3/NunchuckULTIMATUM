@@ -8,12 +8,12 @@ obstacles obstacle[5];
 uint8_t i;
 uint8_t obstaclespeed = 1;
 
-void draw_obstacles(MI0283QT9 lcd) {
+void drawObstacles(MI0283QT9 lcd) {
 	obstaclespeed = 4;
 	for (i = 0; i < 5; i++) {
 		lcd.fillRect((obstacle + i)->olocationx, (obstacle + i)->olocationy - obstaclespeed, (obstacle + i)->osize, obstaclespeed, RGB(100, 149, 237));
-		//lcd.fillRect((obstacle + i)->olocationx, 8 - (obstacle + i)->olocationy + obstaclespeed, (obstacle + i)->osize, obstaclespeed, RGB(139, 69, 0));
-		lcd.fillRect((obstacle + i)->olocationx, (obstacle + i)->olocationy + obstaclespeed, (obstacle + i)->osize, 8 - obstaclespeed, RGB(139, 69, 0));
+		lcd.fillRect((obstacle + i)->olocationx, 8 - (obstacle + i)->olocationy + obstaclespeed, (obstacle + i)->osize, obstaclespeed, RGB(139, 69, 0));
+		//lcd.fillRect((obstacle + i)->olocationx, (obstacle + i)->olocationy + obstaclespeed, (obstacle + i)->osize, 8 - obstaclespeed, RGB(139, 69, 0));
 		//if ((obstacle + i)->olocationx >= 180) {
 		//	lcd.fillRect((obstacle + i)->olocationx - (obstacle + i)->osize, (obstacle + i)->olocationy - obstaclespeed, 90 - (obstacle + i)->osize, obstaclespeed, RGB(100, 149, 237));
 		//	lcd.fillRect((obstacle + i)->olocationx - (obstacle + i)->osize, (obstacle + i)->olocationy + obstaclespeed, 90 - (obstacle + i)->osize, 8 - obstaclespeed, RGB(139, 69, 0));
@@ -27,7 +27,7 @@ void draw_obstacles(MI0283QT9 lcd) {
 	}
 }
 
-void shift_obstacles(MI0283QT9 lcd) {
+void shiftObstacles(MI0283QT9 lcd) {
 	if ((obstacle + 0)->olocationy >= 64 || (obstacle + 0)->osize == 0) {
 		lcd.fillRect((obstacle + 4)->olocationx, (obstacle + 4)->olocationy - obstaclespeed, (obstacle + 4)->osize, obstaclespeed, RGB(100, 149, 237));
 		for (i = 4; i > 0; i--) {
@@ -56,19 +56,23 @@ void reset_obstacles() {
 	memset(obstacle, 0, sizeof(obstacle));
 }
 
-uint8_t get_obstaclespeed() {
+void increaseObstaclespeed() {
+	obstaclespeed++;
+}
+
+uint8_t getObstaclespeed() {
 	return obstaclespeed;
 }
 
-uint8_t get_obstaclex(uint8_t i) {
+uint8_t getObstaclex(uint8_t i) {
 	return (obstacle + i)->olocationx;
 }
 
-uint16_t get_obstacley(uint8_t i) {
+uint16_t getObstacley(uint8_t i) {
 	return (obstacle + i)->olocationy;
 }
 
-uint8_t get_obstacles(uint8_t i) {
+uint8_t getObstacles(uint8_t i) {
 	return (obstacle + i)->osize;
 }
 

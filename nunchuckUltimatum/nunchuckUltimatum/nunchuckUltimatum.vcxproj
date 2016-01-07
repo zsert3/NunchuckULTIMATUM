@@ -84,6 +84,7 @@
     <ClInclude Include="nunchuckData.h" />
     <ClInclude Include="obstacles.h" />
     <ClInclude Include="pausescreen.h" />
+    <ClInclude Include="score.h" />
     <ClInclude Include="settings.h" />
     <ClInclude Include="tutorial.h" />
     <ClInclude Include="__vm\.nunchuckUltimatum.vsarduino.h" />
@@ -99,6 +100,7 @@
     <ClCompile Include="nunchuckData.cpp" />
     <ClCompile Include="obstacles.cpp" />
     <ClCompile Include="pausescreen.cpp" />
+    <ClCompile Include="score.cpp" />
     <ClCompile Include="settings.cpp" />
     <ClCompile Include="tutorial.cpp" />
   </ItemGroup>

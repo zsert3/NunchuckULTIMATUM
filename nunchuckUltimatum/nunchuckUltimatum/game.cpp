@@ -2,53 +2,40 @@
 #include "game.h"
 
 
-//typedef struct {
-//	uint8_t osize;
-//	uint16_t olocationy;
-//	uint8_t olocationx;
-//}obstacles;
-
-
 int joyx;
 int joyy;
 int blocationx = 110;
 int blocationy = 270;
 uint8_t newloc = 1;
-//uint8_t obstaclespeed = 1;
-uint8_t c;
-uint8_t ie;
-int score = 0;
-//uint8_t lives = 0;
-//uint8_t blinkRed = 0;
-//uint8_t odirection = 0;
-
-//obstacles obstacle[5];
-
 
 void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
 {
-	//reset_obstacles();
 	nunchuckInit();
 	resetboat(lcd,watercolour, landcolour, tekstColour);
 	ledInit();
-	setlives(1);
-	set_obstaclespeed(1);
+	resetLives();
+	setObstaclespeed(1);
+	
 }
+
 
 void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int tekstcolour)
 {
+	//uitlezen nunchuckdata
 	nunchuckGetData();
 	joyx = nunchuckGetJoyX();
 	joyy = nunchuckGetJoyY();
-	
+
+	//nunchuck omhoog
 	if (joyy > 145) {
 		if (blocationy > 0) {
 			blocationy -= 5;
-			lcd.fillRect(blocationx, blocationy + 25, 15, 5, RGB(100, 149, 237));
+			lcd.fillRect(blocationx, blocationy + 25, 15, 5, RGB(100, 149, 237));  //verwijder deel van boot dat veranderd
 			newloc = 1;
 		}
 	}
 
+	//nunchuck omlaag
 	if (joyy < 105) {
 		if (blocationy < 295) {
 			blocationy += 5;
@@ -57,39 +44,37 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 		}
 	}
 
-	if (joyx > 145) {	//marge vanaf hoever van middelpunt bewegen
-		blocationx += 5;	//snelheid boot, bij hoge waarde - breedte boot
+	//nunchuck naar rechts
+	if (joyx > 145) {	
+		blocationx += 5;	
 		lcd.fillRect(blocationx - 5, blocationy, 5, 25, RGB(100, 149, 237));
 		newloc = 1;
 	}
 
+	//nunchuck naar links
 	if (joyx < 105) {
 		blocationx -= 5;
 		lcd.fillRect(blocationx + 15, blocationy, 5, 25, RGB(100, 149, 237));
 		newloc = 1;
 	}
 
-
+	//teken boot als locatie veranderd
 	if (newloc == 1) {
 		tekenboot(lcd, blocationx, blocationy);
 		newloc = 0;
 	}
 
-	lcd.drawText(17, 10, "Score", RGB(0, 0, 0), RGB(100, 149, 237), 1);
-	lcd.drawInteger(17, 20, score, DEC, RGB(0, 0, 0), RGB(100, 149, 237), 1);
+	//teken score
+	drawScore(lcd);
 
-	draw_obstacles(lcd);
+	//teken obstakels
+	drawObstacles(lcd);
 
-	if (get_obstacley(0) >= 64) {
-		score++;
-		if (score % 20 == 19 && get_obstaclespeed() <= 3)set_obstaclespeed((score + 19) / 19);
-	}
+	shiftObstacles(lcd);
 
-	shift_obstacles(lcd);
-
-	check_lives();
+	checkLives();
 	for (uint8_t i = 0; i < 5; i++) {
-		check_collision(lcd, get_obstaclex(i), get_obstacley(i), get_obstacles(i), watercolour, landcolour, tekstcolour);
+		check_collision(lcd, getObstaclex(i), getObstacley(i), getObstacles(i), watercolour, landcolour, tekstcolour);
 	}
 	}
 	
@@ -99,10 +84,10 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int watercolour, int landcolour, int tekstColour) {
 	//if (blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
 		if(blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
-		if (get_lives() >= 3) {
-			scoreCalculator(score);
-			score = 0;
-			reset_lives();
+		if (getLives() >= 3) {
+			scoreCalculator(getScore());
+			resetScore();
+			resetLives();
 			//setlives(0);
 			resetboat(lcd, watercolour, landcolour, tekstColour);
 			setGameStarted(0);
@@ -112,7 +97,7 @@ void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int wat
 		}
 		else {
 			Serial.println("test");
-			remove_live();
+			removeLive();
 			resetboat(lcd, watercolour, landcolour, tekstColour);
 		}
 		
@@ -121,7 +106,7 @@ void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int wat
 
 
 void resetboat(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour) {
-	reset_obstacles();
+	resetObstacles();
 	//memset(obstacle, 0, sizeof(obstacle));
 	newloc = 1;
 	lcd.fillRect(230, 0, 10, 320, landcolour);
@@ -147,16 +132,6 @@ void setBlocationX(int Blocationx)
 void setBlocationY(int Blocationy)
 {
 	blocationy = Blocationy;
-}
-
-void setScore(int Score)
-{
-	score = Score;
-}
-
-int getScore()
-{
-	return score;
 }
 
 void set_visable() {
