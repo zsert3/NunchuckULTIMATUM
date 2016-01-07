@@ -69,6 +69,7 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 		newloc = 1;
 	}
 
+
 	if (newloc == 1) {
 		tekenboot(lcd, blocationx, blocationy);
 		newloc = 0;
@@ -87,7 +88,6 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 	shift_obstacles(lcd);
 
 	check_lives();
-
 	for (uint8_t i = 0; i < 5; i++) {
 		check_collision(lcd, get_obstaclex(i), get_obstacley(i), get_obstacles(i), watercolour, landcolour, tekstcolour);
 	}
@@ -97,7 +97,8 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 
 
 void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int watercolour, int landcolour, int tekstColour) {
-	if (blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
+	//if (blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
+		if(blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
 		if (get_lives() >= 3) {
 			scoreCalculator(score);
 			reset_lives();
