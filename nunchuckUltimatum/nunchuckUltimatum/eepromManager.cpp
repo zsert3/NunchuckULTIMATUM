@@ -4,9 +4,8 @@
 typedef struct s_eeprom {
 	int	brightnes;
 	int score[5];
-
 } SAVED_DATA ;
-SAVED_DATA EEMEM eeprom{0,0,0,0,0,0};
+SAVED_DATA EEMEM eeprom = { 0 };
 
 
 
@@ -44,9 +43,10 @@ int getMaxbrightnes() {
 	return 900;
 }
 
-void setBrightnes(int brightnes) {
+void setBrightnes(int brightnes, MI0283QT9 lcd) {
 	SAVED_DATA data;
 	getAll(&data);
 	data.brightnes = brightnes;
 	eeprom_write_block(&data, &eeprom, sizeof(SAVED_DATA));
+	lcd.led(brightnes * 0.111 + 5);
 }

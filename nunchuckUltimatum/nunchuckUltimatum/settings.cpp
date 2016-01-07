@@ -12,10 +12,10 @@
 int settings_pushed = 0;
 int setting = 0;
 
-void placeButton(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour, char *text, int lcX, int lcY) {
+void placeButton(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour, char *text, int lcX, int lcY, int buttonsizeY) {
 	int arrSize = strlen(text);
 	int buttonsizeX = 160;
-	int buttonsizeY = 40;
+	//int buttonsizeY = 40;
 	lcd.fillRoundRect(lcX, lcY, buttonsizeX, buttonsizeY, 10, landcolour);
 	//a letter is 4x4 pixels
 	lcd.drawText(lcX + (buttonsizeX/2) - (arrSize * 4), lcY + (buttonsizeY/2) - 4, text, tekstColour, landcolour, 1);
@@ -33,10 +33,9 @@ void placeSlider(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 
 	int maxBrightnes = getMaxbrightnes();
 	int currentBrightness = getBrightnes();
-	Serial.print("helderheid: ");
-	Serial.println(currentBrightness);
 	int size = barLength /(900.0 / currentBrightness);
-	setBrightness(lcd, currentBrightness);
+	setBrightnes(currentBrightness, lcd);
+
 	//lcd.fillRect(lcX, lcY, slidersizeX, slidersizeY, landcolour);
 	lcd.fillRect(lcX, lcY+(slidersizeY/4), slidersizeX, slidersizeY/2+ barthickness, landcolour);
 	lcd.fillRect(lcX + (slidersizeX - barLength) / 2, barpositionY * 2, barLength, slidersizeY / 2, landcolour);
@@ -46,12 +45,13 @@ void placeSlider(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 	//lcd.drawText(lcX + (buttonsizeX / 2) - (arrSize * 4), lcY + buttonsizeY, text, tekstColour, landcolour, 1);
 }
 
-void setBrightness(MI0283QT9 lcd, int currentBrightness) {
-	lcd.led(getBrightnes() * 0.111 + 5);
-}
-
+//void setBrightness(MI0283QT9 lcd, int currentBrightness)
+//{
+//	lcd.led(getBrightnes() * 0.111 + 5);
+//}
 
 int brightness() {
+
 }
 
 
@@ -63,26 +63,22 @@ void touchScreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 
 		if (pushX >= 40  && pushX <= 200 && pushY >= 60 && pushY <= 60 + 20){
 			resetScore();
-			basisschermHighScores(lcd, watercolour, landcolour, tekstcolour);
-			terugButton(lcd, watercolour, landcolour, tekstcolour);
-			setting = 0;
+			lcd.drawText(70, 75, "SCORE GERESET", tekstcolour, landcolour, 1);
+		} 
+
+		if (pushX >= 40 && pushX <= 200 && pushY >= 180 && pushY <= 180 + 40) {
+			setBrightnes(getMaxbrightnes() / ((200.0-40.0)/(pushX -40)), lcd);
+			Serial.print(getBrightnes());
+			placeSlider(lcd, watercolour, landcolour, tekstcolour, 40, 180);
 		}
 
-		if (pushX >= 40 && pushX <= 200 && pushY >= 290 && pushY <= 320){
+		if (pushX >= 40 && pushX <= 200 && pushY >= 295 && pushY <= 320) {
 			lcd.fillRect(10, 290, 220, 30, watercolour);
 			lcd.drawText(100, 300, "BACK", tekstcolour, watercolour, 1);
 			setting = 0;
 			drawMenuScherm(lcd, watercolour, landcolour, tekstcolour);
-			//setting = 0;
+			setpushed(0);
 		}
-
-		if (pushX >= 40 && pushX <= 200 && pushY >= 180 && pushY <= 180 + 40) {
-			setBrightnes(getMaxbrightnes() / ((200.0-40.0)/(pushX -40)));
-			Serial.print(getBrightnes());
-			placeSlider(lcd, watercolour, landcolour, tekstcolour, 40, 180);
-			//setting = 0;
-		}
-
 	}
 }
 
@@ -91,9 +87,10 @@ void basisschermSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 	lcd.drawText(60, 10, "SETTINGS", tekstcolour, watercolour, 2);
 	setting = 1;
 
-	placeButton(lcd, watercolour, landcolour, tekstcolour, "RESET SCORE",40,60);
+	placeButton(lcd, watercolour, landcolour, tekstcolour, "RESET SCORE",40,60, 40);
 
-	placeButton(lcd, watercolour, landcolour, tekstcolour, "", 40, 180);
+	placeButton(lcd, watercolour, landcolour, tekstcolour, "", 40, 160, 60);
+	lcd.drawText(80, 170, "HELDERHEID", tekstcolour, landcolour, 1);
 	placeSlider(lcd, watercolour, landcolour, tekstcolour, 40, 180);
 
 	terugButton(lcd, watercolour, landcolour, tekstcolour);

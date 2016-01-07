@@ -12,7 +12,7 @@
 
 
 #endif
-
+#include <MI0283QT9\MI0283QT9.h>
 #include <EEPROM.h>
 
 void getScore(int score[5]);
@@ -20,4 +20,4 @@ void setScore(int score[5]);
 void resetScore();
 int getBrightnes();
 int getMaxbrightnes();
-void setBrightnes(int brightnes);
+void setBrightnes(int brightnes, MI0283QT9 lcd);

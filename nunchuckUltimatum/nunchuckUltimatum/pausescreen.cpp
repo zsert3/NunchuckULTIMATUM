@@ -21,10 +21,7 @@ void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour
 		{
 			if(gamePaused != 0)
 			{
-
 				touchScreenPauseMenu(lcd, watercolour, landcolour, tekstcolour);
-
-
 			}
 		}
 		
@@ -35,9 +32,12 @@ void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour
 void drawpausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour)  // Here the pausescreen gets drawed
 {
 	lcd.fillRect(10, 0, 220, 320, watercolour);
-	lcd.drawText(65, 10, "PAUSED", tekstcolour, watercolour, 2);
-	lcd.fillRoundRect(40, 130, 160, 40, 10, landcolour);
-	lcd.drawText(83, 147, "CONTINUE", tekstcolour, landcolour, 1);
+	lcd.drawText(75, 35, "PAUSED", tekstcolour, watercolour, 2);
+	lcd.fillRoundRect(40, 75, 160, 40, 10, landcolour);
+	lcd.drawText(60, 90, "HUIDIGE SCORE:", tekstcolour, landcolour, 1);
+	lcd.drawInteger(173, 90, getScore(), 10, tekstcolour, landcolour, 1);
+	lcd.fillRoundRect(40, 140, 160, 40, 10, landcolour);
+	lcd.drawText(83, 157, "CONTINUE", tekstcolour, landcolour, 1);
 	lcd.fillRoundRect(40, 210, 160, 40, 10, landcolour);
 	lcd.drawText(87, 228, "MAIN MENU", tekstcolour, landcolour, 1);
 
@@ -74,36 +74,27 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 			//CONTINUE Button // Pushing this button continues the game
 		{
 			pushedPauseScreen = 1;
-			Serial.println("CONTINUE");
+			lcd.fillRect(40, 140, 160, 40, watercolour);
+			lcd.drawText(83, 157, "CONTINUE", tekstcolour, watercolour, 1);
 			set_visable();
 			gamePaused = 0;
-			lcd.fillRect(10, 0, 220, 320, watercolour);
-			
-
-
-			
-	
+			lcd.fillRect(10, 0, 220, 320, watercolour);	
 		}
 
 		if (pushX >= 40 && pushX <= 200 && pushY >= 230 && pushY <= 270 && pushedPauseScreen == 0)
 			//MAIN  MENU button  // pushing this button returns you to the main menu
 		{
 			pushedPauseScreen = 1;
+			lcd.fillRect(40, 210, 160, 40, watercolour);
+			lcd.drawText(87, 228, "MAIN MENU", tekstcolour, watercolour, 1);
 			scoreCalculator(getScore());
 			setScore(0);
 			reset_lives();
-			//setlives(0);
-			resetboat(lcd, watercolour, landcolour, tekstcolour);
 			setGameStarted(0);
 			setpushed(0);
 			drawMenuScherm(lcd, watercolour, landcolour, tekstcolour);
 			gamePaused = 0;
-
-			
-			
-			
 		}
-		
 	}
 }
 
