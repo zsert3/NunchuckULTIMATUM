@@ -17,7 +17,7 @@ void getAll(SAVED_DATA *data) {
 void getScore(int score[5]) {
 	SAVED_DATA data;
 	getAll(&data);
-	eeprom_read_block(&data, &eeprom, sizeof(SAVED_DATA));
+	//eeprom_read_block(&data, &eeprom, sizeof(SAVED_DATA));
 	score[0] = data.score[0];
 	score[1] = data.score[1];
 	score[2] = data.score[2];
@@ -36,7 +36,7 @@ void resetScore() {
 int getBrightnes() {
 	SAVED_DATA data;
 	getAll(&data);
-	eeprom_read_block(&data, &eeprom, sizeof(SAVED_DATA));
+	//eeprom_read_block(&data, &eeprom, sizeof(SAVED_DATA));
 	return data.brightnes;
 }
 int getMaxbrightnes() {
