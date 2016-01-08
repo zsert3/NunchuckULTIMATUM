@@ -8,7 +8,6 @@ typedef struct s_eeprom {
 SAVED_DATA EEMEM eeprom = { 0 };
 
 
-
 void getAll(SAVED_DATA *data) {
 	// Read the data from eeprom into the 'temp' version in memory
 	eeprom_read_block(data, &eeprom, sizeof(SAVED_DATA));
@@ -32,13 +31,13 @@ void resetHighscore() {
 	eeprom_write_block(score, &eeprom.score, sizeof(SAVED_DATA));
 }
 
-
 int getBrightnes() {
 	SAVED_DATA data;
 	getAll(&data);
 	eeprom_read_block(&data, &eeprom, sizeof(SAVED_DATA));
 	return data.brightnes;
 }
+
 int getMaxbrightnes() {
 	return 900;
 }
@@ -48,5 +47,5 @@ void setBrightnes(int brightnes, MI0283QT9 lcd) {
 	getAll(&data);
 	data.brightnes = brightnes;
 	eeprom_write_block(&data, &eeprom, sizeof(SAVED_DATA));
-	lcd.led(brightnes * 0.111 + 5);
+	lcd.led(brightnes * (100.0 / getMaxbrightnes()) + 5);
 }
