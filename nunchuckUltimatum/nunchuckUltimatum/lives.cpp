@@ -29,7 +29,7 @@ void removeLive() {
 }
 
 void resetLives() {
-	lives = 0;
+	lives = 1;
 	PORTC &= ~(7 << PORTC0);
 }
 

@@ -16,12 +16,7 @@ void drawScore(MI0283QT9 lcd) {
 
 //score met 1 verhogen
 void increaseScore() {
-	//verhoog score zodra er een nieuw obstakel is
-	if (get_obstacley(0) >= 64) {
-		score++;
-		//verhoog snelheid zodra score deelbaar is door 19
-		if (getScore() % 20 == 19 && get_obstaclespeed() <= 3)increaseObstaclespeed();
-	}
+	score++;
 }
 
 //score teruggeven

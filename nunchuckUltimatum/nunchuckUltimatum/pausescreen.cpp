@@ -88,8 +88,8 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 			lcd.fillRect(40, 210, 160, 40, watercolour);
 			lcd.drawText(87, 228, "MAIN MENU", tekstcolour, watercolour, 1);
 			scoreCalculator(getScore());
-			setScore(0);
-			reset_lives();
+			resetScore();
+			resetLives();
 			setGameStarted(0);
 			setpushed(0);
 			drawMenuScherm(lcd, watercolour, landcolour, tekstcolour);

@@ -9,12 +9,14 @@
 	#include "WProgram.h"
 #endif
 #include <MI0283QT9.h>
+#include "score.h"
 
 void drawObstacles(MI0283QT9 lcd);
 void shiftObstacles(MI0283QT9 lcd);
 void resetObstacles();
 void setObstaclespeed(uint8_t speed);
 void increaseObstaclespeed();
+void resetObstaclespeed();
 uint8_t getObstaclespeed();
 uint8_t getObstaclex(uint8_t i);
 uint16_t getObstacley(uint8_t i);

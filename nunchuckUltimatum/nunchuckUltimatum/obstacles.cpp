@@ -9,11 +9,11 @@ uint8_t i;
 uint8_t obstaclespeed = 1;
 
 void drawObstacles(MI0283QT9 lcd) {
-	obstaclespeed = 4;
+	//obstaclespeed = 4;
 	for (i = 0; i < 5; i++) {
 		lcd.fillRect((obstacle + i)->olocationx, (obstacle + i)->olocationy - obstaclespeed, (obstacle + i)->osize, obstaclespeed, RGB(100, 149, 237));
-		lcd.fillRect((obstacle + i)->olocationx, 8 - (obstacle + i)->olocationy + obstaclespeed, (obstacle + i)->osize, obstaclespeed, RGB(139, 69, 0));
-		//lcd.fillRect((obstacle + i)->olocationx, (obstacle + i)->olocationy + obstaclespeed, (obstacle + i)->osize, 8 - obstaclespeed, RGB(139, 69, 0));
+		//lcd.fillRect((obstacle + i)->olocationx, 8 - (obstacle + i)->olocationy + obstaclespeed, (obstacle + i)->osize, obstaclespeed, RGB(139, 69, 0));
+		lcd.fillRect((obstacle + i)->olocationx, (obstacle + i)->olocationy + obstaclespeed, (obstacle + i)->osize, 8 - obstaclespeed, RGB(139, 69, 0));
 		//if ((obstacle + i)->olocationx >= 180) {
 		//	lcd.fillRect((obstacle + i)->olocationx - (obstacle + i)->osize, (obstacle + i)->olocationy - obstaclespeed, 90 - (obstacle + i)->osize, obstaclespeed, RGB(100, 149, 237));
 		//	lcd.fillRect((obstacle + i)->olocationx - (obstacle + i)->osize, (obstacle + i)->olocationy + obstaclespeed, 90 - (obstacle + i)->osize, 8 - obstaclespeed, RGB(139, 69, 0));
@@ -30,6 +30,12 @@ void drawObstacles(MI0283QT9 lcd) {
 void shiftObstacles(MI0283QT9 lcd) {
 	if ((obstacle + 0)->olocationy >= 64 || (obstacle + 0)->osize == 0) {
 		lcd.fillRect((obstacle + 4)->olocationx, (obstacle + 4)->olocationy - obstaclespeed, (obstacle + 4)->osize, obstaclespeed, RGB(100, 149, 237));
+		
+		//verhoog score zodra er een nieuw obstakel is
+			increaseScore();
+			//verhoog snelheid zodra score deelbaar is door 19
+			if (getScore() % 20 == 19 && getObstaclespeed() <= 3)increaseObstaclespeed();
+
 		for (i = 4; i > 0; i--) {
 			*(obstacle + i) = *(obstacle + i - 1);
 		}
@@ -48,11 +54,11 @@ void shiftObstacles(MI0283QT9 lcd) {
 	}
 }
 
-void set_obstaclespeed(uint8_t speed) {
-	obstaclespeed = speed;
+void resetObstaclespeed() {
+	obstaclespeed = 1;
 }
 
-void reset_obstacles() {
+void resetObstacles() {
 	memset(obstacle, 0, sizeof(obstacle));
 }
 

@@ -14,7 +14,7 @@ void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int teks
 	resetboat(lcd,watercolour, landcolour, tekstColour);
 	ledInit();
 	resetLives();
-	setObstaclespeed(1);
+	resetObstaclespeed();
 	
 }
 
@@ -67,12 +67,15 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 	//teken score
 	drawScore(lcd);
 
+	//increaseScore();
+
 	//teken obstakels
 	drawObstacles(lcd);
 
 	shiftObstacles(lcd);
 
 	checkLives();
+
 	for (uint8_t i = 0; i < 5; i++) {
 		check_collision(lcd, getObstaclex(i), getObstacley(i), getObstacles(i), watercolour, landcolour, tekstcolour);
 	}
@@ -86,7 +89,6 @@ void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int wat
 		if(blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
 		if (getLives() >= 3) {
 			scoreCalculator(getScore());
-			resetScore();
 			resetLives();
 			//setlives(0);
 			resetboat(lcd, watercolour, landcolour, tekstColour);
@@ -94,7 +96,7 @@ void check_collision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int wat
 			setpushed(0);
 			//hier moet het game over scherm komen
 			basisschermGameOver(lcd, watercolour, landcolour, tekstColour);
-			score = 0;
+			resetScore();
 			Serial.println("gamefile");
 			return;
 		}

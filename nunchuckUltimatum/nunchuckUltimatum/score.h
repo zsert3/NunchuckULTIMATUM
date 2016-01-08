@@ -8,6 +8,9 @@
 #else
 	#include "WProgram.h"
 #endif
+
+#include <MI0283QT9\MI0283QT9.h>
+
 void drawScore(MI0283QT9 lcd);
 void increaseScore();
 void resetScore();

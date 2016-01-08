@@ -36,7 +36,7 @@ void touchScreenGameOver(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 			lcd.fillRoundRect(40, 140, 160, 40,10, watercolour);
 			lcd.drawText(103, 157, "RETRY", tekstcolour, watercolour, 1);
 			GameOverPushed = 1;
-			setlives(1);
+			resetLives();
 			setGameStarted(1);
 			lcd.fillRect(10, 0, 220, 320, watercolour);
 			Serial.println("touchGO");
