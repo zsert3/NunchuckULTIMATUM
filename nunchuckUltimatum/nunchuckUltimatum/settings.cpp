@@ -62,7 +62,7 @@ void touchScreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 		//settings_pushed = 0;
 
 		if (pushX >= 40  && pushX <= 200 && pushY >= 60 && pushY <= 60 + 20){
-			resetScore();
+			resetHighscore();
 			lcd.drawText(70, 75, "SCORE GERESET", tekstcolour, landcolour, 1);
 		} 
 

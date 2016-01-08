@@ -9,13 +9,13 @@
 	#include "WProgram.h"
 #endif
 	#include "pausescreen.h"
-	void check_lives();
+	void checkLives();
 	void ledInit();
-	void remove_live();
-	void reset_lives();
-	void blink_led();
-	int get_lives();
-	void setlives(uint8_t live);
+	void removeLive();
+	void resetLives();
+	void blinkLed();
+	int getLives();
+	void setLives(uint8_t live);
 #endif
 
 

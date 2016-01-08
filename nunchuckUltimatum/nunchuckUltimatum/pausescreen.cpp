@@ -70,7 +70,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 		//Serial.print("touchY: ");
 		//Serial.println(pushY);
 
-		if (pushX >= 40 && pushX <= 200 && pushY >= 150 && pushY <= 190 && pushedPauseScreen == 0)
+		if (pushX >= 40 && pushX <= 200 && pushY >= 140 && pushY <= 180 && pushedPauseScreen == 0)
 			//CONTINUE Button // Pushing this button continues the game
 		{
 			pushedPauseScreen = 1;
@@ -81,15 +81,15 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 			lcd.fillRect(10, 0, 220, 320, watercolour);	
 		}
 
-		if (pushX >= 40 && pushX <= 200 && pushY >= 230 && pushY <= 270 && pushedPauseScreen == 0)
+		if (pushX >= 40 && pushX <= 200 && pushY >= 210 && pushY <= 250 && pushedPauseScreen == 0)
 			//MAIN  MENU button  // pushing this button returns you to the main menu
 		{
 			pushedPauseScreen = 1;
 			lcd.fillRect(40, 210, 160, 40, watercolour);
 			lcd.drawText(87, 228, "MAIN MENU", tekstcolour, watercolour, 1);
 			scoreCalculator(getScore());
-			setScore(0);
-			reset_lives();
+			resetScore();
+			resetLives();
 			setGameStarted(0);
 			setpushed(0);
 			drawMenuScherm(lcd, watercolour, landcolour, tekstcolour);

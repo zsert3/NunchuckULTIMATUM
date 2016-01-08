@@ -27,7 +27,7 @@ void getScore(int score[5]) {
 void setScore(int score[5]) {
 	eeprom_write_block(score, &eeprom.score, sizeof(SAVED_DATA));
 }
-void resetScore() {
+void resetHighscore() {
 	int score[] = { 0,0,0,0,0 };
 	eeprom_write_block(score, &eeprom.score, sizeof(SAVED_DATA));
 }
