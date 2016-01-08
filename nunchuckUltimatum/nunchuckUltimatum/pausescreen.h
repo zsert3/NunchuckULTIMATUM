@@ -14,6 +14,7 @@
 #include "game.h"
 #include "lives.h"
 #include "boot.h"
+#include "score.h"
 
 #endif
 

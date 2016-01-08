@@ -17,7 +17,7 @@
 
 void getScore(int score[5]);
 void setScore(int score[5]);
-void resetScore();
+void resetHighscore();
 int getBrightnes();
 int getMaxbrightnes();
 void setBrightnes(int brightnes, MI0283QT9 lcd);

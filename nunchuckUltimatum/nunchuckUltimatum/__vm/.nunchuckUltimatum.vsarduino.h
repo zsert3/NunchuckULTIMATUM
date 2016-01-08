@@ -13,7 +13,7 @@
 #define __AVR_ATmega328p__
 #define __AVR_ATmega328P__
 #define F_CPU 16000000L
-#define ARDUINO 10606
+#define ARDUINO 10607
 #define ARDUINO_AVR_UNO
 #define ARDUINO_ARCH_AVR
 #define __cplusplus
@@ -105,6 +105,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <..\nunchuckUltimatum\obstacles.h>
 #include <..\nunchuckUltimatum\pausescreen.cpp>
 #include <..\nunchuckUltimatum\pausescreen.h>
+#include <..\nunchuckUltimatum\score.cpp>
+#include <..\nunchuckUltimatum\score.h>
 #include <..\nunchuckUltimatum\settings.cpp>
 #include <..\nunchuckUltimatum\settings.h>
 #include <..\nunchuckUltimatum\tutorial.cpp>
