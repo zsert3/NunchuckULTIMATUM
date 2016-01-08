@@ -34,24 +34,11 @@ void scoreCalculator(int ns) {
 	}
 }
 
-int scoreLocation(int ns) {
-	int score[5];
-	int i = 0;
-	int position = 0;
-	getScore(score);
-	//if it is higher then the lowest score action must be taken
-	while (position = 0 && i < 4) {
-		if (ns > score[i]) {
-			position = i + 1;
-		}
-	}
-	return position;
-}
-
 
 
 void basisschermHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
 {
+	//haal scores op uit EEPROM
 	int score[] = { 0,0,0,0,0 };	
 	getScore(score);
 	int i = 4;
@@ -59,7 +46,7 @@ void basisschermHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int t
 	lcd.drawText(40, 10, "HIGHSCORES", tekstColour, watercolour, 2);
 
 	char str[15];
-	
+	//schrijf scores weg als string en draw text
 	while (i >= 0) {
 		sprintf(str, "%d", score[i]);
 		lcd.drawText(50 , 50 + (120 - (i * 30)), str, tekstColour, watercolour, 2);

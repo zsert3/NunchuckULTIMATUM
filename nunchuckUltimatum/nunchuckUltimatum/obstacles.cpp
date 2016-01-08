@@ -1,6 +1,3 @@
-// 
-// 
-// 
 
 #include "obstacles.h"
 
@@ -31,14 +28,17 @@ void shiftObstacles(MI0283QT9 lcd) {
 	if ((obstacle + 0)->olocationy >= 64 || (obstacle + 0)->osize == 0) {
 		lcd.fillRect((obstacle + 4)->olocationx, (obstacle + 4)->olocationy - obstaclespeed, (obstacle + 4)->osize, obstaclespeed, RGB(100, 149, 237));
 		
-		//verhoog score zodra er een nieuw obstakel is
+			//verhoog score zodra er een nieuw obstakel is
 			increaseScore();
-			//verhoog snelheid zodra score deelbaar is door 19
+			//verhoog snelheid zodra score deelbaar is door 19 (max snelheid is 4)
 			if (getScore() % 20 == 19 && getObstaclespeed() <= 3)increaseObstaclespeed();
 
-		for (i = 4; i > 0; i--) {
-			*(obstacle + i) = *(obstacle + i - 1);
-		}
+			//schuif alle gegevens 1 plaats op
+			for (i = 4; i > 0; i--) {
+				*(obstacle + i) = *(obstacle + i - 1);
+			}
+
+			//obstakel gegevens vullen
 		//if (rand() % 3 == 1) {
 		//	obstacle->omoving = 1;
 		//	obstacle->odirection = 2;
@@ -54,29 +54,36 @@ void shiftObstacles(MI0283QT9 lcd) {
 	}
 }
 
+
 void resetObstaclespeed() {
 	obstaclespeed = 1;
 }
+
 
 void resetObstacles() {
 	memset(obstacle, 0, sizeof(obstacle));
 }
 
+
 void increaseObstaclespeed() {
 	obstaclespeed++;
 }
+
 
 uint8_t getObstaclespeed() {
 	return obstaclespeed;
 }
 
+
 uint8_t getObstaclex(uint8_t i) {
 	return (obstacle + i)->olocationx;
 }
 
+
 uint16_t getObstacley(uint8_t i) {
 	return (obstacle + i)->olocationy;
 }
+
 
 uint8_t getObstacles(uint8_t i) {
 	return (obstacle + i)->osize;
