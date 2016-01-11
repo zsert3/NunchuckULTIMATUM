@@ -1,7 +1,7 @@
 
 #include "boot.h"
 
-
+//deze functie zorgt ervoor dat de boot dynamisch op het scherm getekend kan worden
 void tekenboot(MI0283QT9 lcd, int x, int y) {
 	uint8_t breete = 15;
 	uint8_t lengte = 25;
