@@ -1,4 +1,3 @@
-//Gerard van Turennout
 #include "eepromManager.h"
 
 

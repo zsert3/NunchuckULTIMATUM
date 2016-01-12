@@ -7,9 +7,9 @@ void resetScore() {
 	score = 0;
 }
 
-void drawScore(MI0283QT9 lcd) {
-	lcd.drawText(17, 10, "Score", RGB(0, 0, 0), RGB(100, 149, 237), 1);
-	lcd.drawInteger(17, 20, score, DEC, RGB(0, 0, 0), RGB(100, 149, 237), 1);
+void drawScore(MI0283QT9 lcd, int watercolour) {
+	lcd.drawText(17, 10, "Score", RGB(0, 0, 0), watercolour, 1);
+	lcd.drawInteger(17, 20, score, DEC, RGB(0, 0, 0), watercolour, 1);
 }
 
 void increaseScore() {

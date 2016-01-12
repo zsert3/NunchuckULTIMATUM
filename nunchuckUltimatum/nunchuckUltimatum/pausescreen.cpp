@@ -6,6 +6,8 @@
 int pushedPauseScreen = 0;
 int c_Button;
 int gamePaused;
+int release = 0;
+
 
 void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour)
 {	
@@ -33,9 +35,8 @@ void drawpausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstco
 {
 	lcd.fillRect(10, 0, 220, 320, watercolour);
 	lcd.drawText(75, 35, "PAUSED", tekstcolour, watercolour, 2);
-	lcd.fillRoundRect(40, 75, 160, 40, 10, landcolour);
-	lcd.drawText(60, 90, "HUIDIGE SCORE:", tekstcolour, landcolour, 1);
-	lcd.drawInteger(173, 90, getScore(), 10, tekstcolour, landcolour, 1);
+	lcd.drawText(60, 90, "HUIDIGE SCORE:", tekstcolour, watercolour, 1);
+	lcd.drawInteger(173, 90, getScore(), 10, tekstcolour, watercolour, 1);
 	lcd.fillRoundRect(40, 140, 160, 40, 10, landcolour);
 	lcd.drawText(83, 157, "CONTINUE", tekstcolour, landcolour, 1);
 	lcd.fillRoundRect(40, 210, 160, 40, 10, landcolour);
@@ -46,29 +47,26 @@ void drawpausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstco
 void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour) // Here we check if the touchscreen is pushed
 {
 	cbuttonPushed(lcd, watercolour, landcolour, tekstcolour);
-	Serial.println("Button");
-	if (c_Button == 0)
+	// check if c_buttom button has been released
+	if (c_Button == 1) {
+		release = 1;
+	}
+	// if c_button is pressed and has previously been released then it will continue the game and reset the values of the pausescreen
+	if (c_Button == 0 && release == 1)
 	{
-		cbuttonPushed(lcd, watercolour, landcolour, tekstcolour);
+		release = 0;
 		lcd.fillRect(10, 0, 220, 320, watercolour);
 		setVisable();
 		gamePaused = 0;
-		/*if (c_Button == 1)
-		{
-			lcd.fillRect(10, 0, 220, 320, watercolour);
-			gamePaused = 0;
-		}*/
 	}
+
+
 
 	if (lcd.touchRead())
 	{
 		int pushX = lcd.touchX();
 		int pushY = lcd.touchY();
 		pushedPauseScreen = 0;
-		//Serial.print("touchX: ");
-		//Serial.println(pushX);
-		//Serial.print("touchY: ");
-		//Serial.println(pushY);
 
 		if (pushX >= 40 && pushX <= 200 && pushY >= 140 && pushY <= 180 && pushedPauseScreen == 0)
 			//CONTINUE Button // Pushing this button continues the game
@@ -92,7 +90,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 			resetLives();
 			setGameStarted(0);
 			setpushed(0);
-			drawMenuScherm(lcd, watercolour, landcolour, tekstcolour);
+			drawMenuScreen(lcd, watercolour, landcolour, tekstcolour);
 			gamePaused = 0;
 		}
 	}
@@ -100,7 +98,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 
 void cbuttonPushed(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour)
 {
-	nunchuckGetData();  // Revriving the state of the C Button of the nunchuck
+	nunchuckGetData();  // Reviving the state of the C Button of the nunchuck
 	c_Button = nunchuckGetc_button();
 
 	if ((c_Button >> 1) & 1)  // determing the state of the C button

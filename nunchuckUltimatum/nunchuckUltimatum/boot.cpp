@@ -2,7 +2,7 @@
 #include "boot.h"
 
 //deze functie zorgt ervoor dat de boot dynamisch op het scherm getekend kan worden
-void tekenboot(MI0283QT9 lcd, int x, int y) {
+void drawboot(MI0283QT9 lcd, int x, int y) {
 	uint8_t breete = 15;
 	uint8_t lengte = 25;
 	uint8_t stapgroote = 3;
@@ -12,4 +12,13 @@ void tekenboot(MI0283QT9 lcd, int x, int y) {
 	int mastPositie = -2;
 	lcd.fillCircle(x + breete / 2, y + lengte / 2 + mastPositie, (breete + lengte) / 12, RGB(82, 82, 82));
 	lcd.fillTriangle(x, y + lengte / 2 - (breete + lengte) / 12 + mastPositie, x + breete - 1, y + lengte / 2 - (breete + lengte) / 12 + mastPositie, x + breete / 2, y - 2 + lengte / 2 - (breete + lengte) / 12 + mastPositie, RGB(255, 255, 255));
+}
+
+void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour) {
+	resetObstacles();
+	setNewloc(1);
+	lcd.fillRect(230, 0, 10, 320, landcolour);
+	lcd.fillRect(10, 0, 220, 320, watercolour);
+	setBlocationX(110);
+	setBlocationY(270);
 }

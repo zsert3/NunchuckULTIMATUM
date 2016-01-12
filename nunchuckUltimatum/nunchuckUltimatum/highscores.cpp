@@ -4,7 +4,7 @@
 #include "highscores.h"
 #include "eepromManager.h"
 
-//ns = nieuw score
+//ns = new score
 void scoreCalculator(int ns) {
 	int score[5];
 	int i;
@@ -36,9 +36,9 @@ void scoreCalculator(int ns) {
 
 
 
-void basisschermHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
+void basicscreenHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
 {
-	//haal scores op uit EEPROM
+	//get scores from EEPROM
 	int score[] = { 0,0,0,0,0 };	
 	getScore(score);
 	int i = 4;
@@ -46,7 +46,7 @@ void basisschermHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int t
 	lcd.drawText(40, 10, "HIGHSCORES", tekstColour, watercolour, 2);
 
 	char str[15];
-	//schrijf scores weg als string en draw text
+	//write score as a string and draw it as a text
 	while (i >= 0) {
 		sprintf(str, "%d", score[i]);
 		lcd.drawText(50 , 50 + (120 - (i * 30)), str, tekstColour, watercolour, 2);

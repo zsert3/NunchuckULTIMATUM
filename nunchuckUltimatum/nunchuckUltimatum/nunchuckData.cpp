@@ -3,7 +3,7 @@
 // 
 
 #include "nunchuckData.h"
-#include <Wire\Wire.h>
+
 
 uint8_t nunchuck_buf[6];
 

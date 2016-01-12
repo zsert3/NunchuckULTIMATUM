@@ -14,9 +14,9 @@
 #include "pausescreen.h"
 #include "settings.h"
 
-void drawMenuScherm(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void drawMenuScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
-void terugButton(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void backButton(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 int getGameStarted(void);
 void setGameStarted(int GameSTarted);
 void setpushed(int Pushed);

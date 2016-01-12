@@ -12,6 +12,6 @@
 #include "boot.h"
 
 
-void basisschermTutorial(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void basicscreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 #endif
 

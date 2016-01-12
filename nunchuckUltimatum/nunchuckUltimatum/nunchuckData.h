@@ -8,6 +8,8 @@
 #else
 	#include "WProgram.h"
 #endif
+#include <Wire\Wire.h>
+
 void nunchuckInit(void);
 int nunchuckGetData(void);
 void nunchuckSendRequest(void);
@@ -16,5 +18,4 @@ int nunchuckGetJoyY(void);
 int nunchuckGetc_button(void);
 char nunchuckDecodeByte(char x);
 
-#endif//nunchuckData.h
-
+#endif

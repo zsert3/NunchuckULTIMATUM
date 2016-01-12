@@ -9,9 +9,9 @@
 	#include "WProgram.h"
 #endif
 #include <MI0283QT9\MI0283QT9.h>
-#include <avr/io.h>
+#include "eepromManager.h"
+#include "mainMenu.h"
 
-void basisschermSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
-void setBrightness(MI0283QT9 lcd, int currentBrightness);
+void basicscreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 #endif
 

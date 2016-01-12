@@ -9,7 +9,10 @@
 	#include "WProgram.h"
 #endif
 #include <MI0283QT9\MI0283QT9.h>
-void tekenboot(MI0283QT9 lcd, int x, int y);
+#include "obstacles.h"
+#include "game.h"
+void drawboot(MI0283QT9 lcd, int x, int y);
+void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 
 #endif
 
