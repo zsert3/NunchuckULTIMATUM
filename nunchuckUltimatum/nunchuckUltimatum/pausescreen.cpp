@@ -48,11 +48,11 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 {
 	cbuttonPushed(lcd, watercolour, landcolour, tekstcolour);
 	// check if c_buttom button has been released
-	if (c_Button == 1) {
+	if (c_Button == 0) {
 		release = 1;
 	}
 	// if c_button is pressed and has previously been released then it will continue the game and reset the values of the pausescreen
-	if (c_Button == 0 && release == 1)
+	if (c_Button == 1 && release == 1)
 	{
 		release = 0;
 		lcd.fillRect(10, 0, 220, 320, watercolour);

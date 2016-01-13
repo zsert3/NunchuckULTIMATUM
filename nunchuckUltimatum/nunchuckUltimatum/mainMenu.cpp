@@ -64,7 +64,7 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour
 			pushed = 1;
 			lcd.fillRoundRect(40, 190, 160, 40, 10, watercolour);
 			lcd.drawText(87, 205, "TUTORIAL", tekstColour, watercolour, 1);
-			basicscreenSettings(lcd, watercolour, landcolour, tekstColour);
+			basicscreenTutorial(lcd, watercolour, landcolour, tekstColour);
 			backButton(lcd, watercolour, landcolour, tekstColour);
 		}
 		//settings button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 en y 255 t/m 292
