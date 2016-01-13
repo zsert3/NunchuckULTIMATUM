@@ -4,6 +4,7 @@
  Author:	Zsert
 */
 //scherm includes
+#include "button.h"
 #include "score.h"
 #include "obstacles.h"
 #include "gameover.h"

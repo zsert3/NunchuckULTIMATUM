@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="boot.h" />
+    <ClInclude Include="button.h" />
     <ClInclude Include="eepromManager.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameover.h" />
@@ -91,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="boot.cpp" />
+    <ClCompile Include="button.cpp" />
     <ClCompile Include="eepromManager.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameover.cpp" />

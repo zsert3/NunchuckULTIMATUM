@@ -11,6 +11,7 @@
 #include <MI0283QT9\MI0283QT9.h>
 #include "eepromManager.h"
 #include "mainMenu.h"
+#include "button.h"
 
 void basicscreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
 #endif

@@ -17,15 +17,15 @@ void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int teks
 	resetLives();
 	resetObstaclespeed();
 	
-	//countdown for game
-	for (int b = 3; b >= 1; b--)
-	{
-		for (int i = 0; i <= 400; i += 40)
-		{
-			lcd.fillRect(10, i - 40, 220, 40, watercolour);
-			lcd.drawInteger(90, i, b, 10, tekstColour, watercolour, 10);
-		}
-	}
+	////countdown for game
+	//for (int b = 3; b >= 1; b--)
+	//{
+	//	for (int i = 0; i <= 400; i += 40)
+	//	{
+	//		lcd.fillRect(10, i - 40, 220, 40, watercolour);
+	//		lcd.drawInteger(90, i, b, 10, tekstColour, watercolour, 10);
+	//	}
+	//}
 }
 
 

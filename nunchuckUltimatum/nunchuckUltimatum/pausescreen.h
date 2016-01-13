@@ -15,6 +15,7 @@
 #include "lives.h"
 #include "boot.h"
 #include "score.h"
+#include "button.h"
 
 #endif
 

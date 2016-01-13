@@ -37,22 +37,20 @@ void drawpausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstco
 	lcd.drawText(75, 35, "PAUSED", tekstcolour, watercolour, 2);
 	lcd.drawText(60, 90, "HUIDIGE SCORE:", tekstcolour, watercolour, 1);
 	lcd.drawInteger(173, 90, getScore(), 10, tekstcolour, watercolour, 1);
-	lcd.fillRoundRect(40, 140, 160, 40, 10, landcolour);
-	lcd.drawText(83, 157, "CONTINUE", tekstcolour, landcolour, 1);
-	lcd.fillRoundRect(40, 210, 160, 40, 10, landcolour);
-	lcd.drawText(87, 228, "MAIN MENU", tekstcolour, landcolour, 1);
-
+	placeButton(lcd, landcolour, tekstcolour, "CONTINUE", getXwaardeButtons(), 140, getWidthButtons(), 160);
+	placeButton(lcd, landcolour, tekstcolour, "MAIN MENU", getXwaardeButtons(), 210, getWidthButtons(), 160);
 }
 
 void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour) // Here we check if the touchscreen is pushed
 {
 	cbuttonPushed(lcd, watercolour, landcolour, tekstcolour);
 	// check if c_buttom button has been released
-	if (c_Button == 0) {
+	if (c_Button == 1) {
 		release = 1;
 	}
+	_delay_us(100);
 	// if c_button is pressed and has previously been released then it will continue the game and reset the values of the pausescreen
-	if (c_Button == 1 && release == 1)
+	if (c_Button == 0 && release == 1)
 	{
 		release = 0;
 		lcd.fillRect(10, 0, 220, 320, watercolour);
@@ -68,23 +66,21 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 		int pushY = lcd.touchY();
 		pushedPauseScreen = 0;
 
-		if (pushX >= 40 && pushX <= 200 && pushY >= 140 && pushY <= 180 && pushedPauseScreen == 0)
+		if (pushX >= getXwaardeButtons() && pushX <= 200 && pushY >= 140 && pushY <= 180 && pushedPauseScreen == 0)
 			//CONTINUE Button // Pushing this button continues the game
 		{
 			pushedPauseScreen = 1;
-			lcd.fillRect(40, 140, 160, 40, watercolour);
-			lcd.drawText(83, 157, "CONTINUE", tekstcolour, watercolour, 1);
+			placeButton(lcd, watercolour, tekstcolour, "CONTINUE", getXwaardeButtons(), 140, getWidthButtons(), 160);
 			setVisable();
 			gamePaused = 0;
 			lcd.fillRect(10, 0, 220, 320, watercolour);	
 		}
 
-		if (pushX >= 40 && pushX <= 200 && pushY >= 210 && pushY <= 250 && pushedPauseScreen == 0)
+		if (pushX >= getXwaardeButtons() && pushX <= 200 && pushY >= 210 && pushY <= 250 && pushedPauseScreen == 0)
 			//MAIN  MENU button  // pushing this button returns you to the main menu
 		{
 			pushedPauseScreen = 1;
-			lcd.fillRect(40, 210, 160, 40, watercolour);
-			lcd.drawText(87, 228, "MAIN MENU", tekstcolour, watercolour, 1);
+			placeButton(lcd, watercolour, tekstcolour, "MAIN MENU", getXwaardeButtons(), 210, getWidthButtons(), 160);
 			scoreCalculator(getScore());
 			resetScore();
 			resetLives();

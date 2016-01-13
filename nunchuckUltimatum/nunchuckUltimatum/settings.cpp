@@ -2,19 +2,10 @@
 // 
 // 
 #include "settings.h"
+int setting = 0;
 
 //Gerard van Turennout
 
-int setting = 0;
-
-void placeButton(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour, char *text, int lcX, int lcY, int buttonsizeY) {
-	int arrSize = strlen(text);
-	//toegevoegt als eventueele meeg gegeven variable
-	int buttonsizeX = 160;
-	lcd.fillRoundRect(lcX, lcY, buttonsizeX, buttonsizeY, 10, landcolour);
-	//a letter is 4x4 pixels
-	lcd.drawText(lcX + (buttonsizeX/2) - (arrSize * 4), lcY + (buttonsizeY/2) - 4, text, tekstColour, landcolour, 1);
-}
 
 
 
@@ -66,13 +57,13 @@ void touchScreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 		//button touch sensors
 		
 		
-		if (pushX >= 40  && pushX <= 200 && pushY >= 60 && pushY <= 60 + 20){
+		if (pushX >= getXwaardeButtons()  && pushX <= 200 && pushY >= getButton1X() && pushY <= 80){
 			resetHighscore();
 			lcd.drawText(70, 75, "SCORE GERESET", tekstcolour, landcolour, 1);
 		} 
 
 		//brightness slider
-		if (pushX >= 40 && pushX <= 200 && pushY >= 180 && pushY <= 180 + 40) {
+		if (pushX >= getXwaardeButtons() && pushX <= 200 && pushY >= 180 && pushY <= 220) {
 			//responds but is not part of the true size of the slider
 			if (pushX > 200 - 10) {
 				pushX = 190;
@@ -85,7 +76,7 @@ void touchScreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 		}
 
 		//back button
-		if (pushX >= 40 && pushX <= 200 && pushY >= 295 && pushY <= 320) {
+		if (pushX >= getXwaardeButtons() && pushX <= 200 && pushY >= 295 && pushY <= 320) {
 			lcd.fillRect(10, 290, 220, 30, watercolour);
 			lcd.drawText(100, 300, "BACK", tekstcolour, watercolour, 1);
 			setting = 0;
@@ -101,13 +92,13 @@ void basicscreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 	//turns on the loop
 	setting = 1;
 
-	placeButton(lcd, watercolour, landcolour, tekstcolour, "RESET SCORE",40,60, 40);
-	placeButton(lcd, watercolour, landcolour, tekstcolour, "", 40, 160, 60);
+	placeButton(lcd, landcolour, tekstcolour, "RESET SCORE", getXwaardeButtons(), getButton1X(), getWidthButtons(), getButtonLength());
+	placeButton(lcd, landcolour, tekstcolour, "", getXwaardeButtons(), 160, 60, getButtonLength());
 	//sets text above slider
 	lcd.drawText(80, 170, "HELDERHEID", tekstcolour, landcolour, 1);
-	placeSlider(lcd, watercolour, landcolour, tekstcolour, 40, 180,0);
+	placeSlider(lcd, watercolour, landcolour, tekstcolour, getXwaardeButtons(), 180,0);
 	//draws back button from mainMenu.ccp
-	backButton(lcd, watercolour, landcolour, tekstcolour);
+	placeButton(lcd, landcolour, tekstcolour, "BACK", 0, 290, 30, 240);
 
 	do {
 		touchScreenSettings(lcd, watercolour, landcolour, tekstcolour);
