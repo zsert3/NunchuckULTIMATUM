@@ -14,7 +14,7 @@
 void drawObstacles(MI0283QT9 lcd);
 void shiftObstacles(MI0283QT9 lcd);
 void resetObstacles();
-void setObstaclespeed(uint8_t speed);
+//void setObstaclespeed(uint8_t speed);
 void increaseObstaclespeed();
 void resetObstaclespeed();
 uint8_t getObstaclespeed();

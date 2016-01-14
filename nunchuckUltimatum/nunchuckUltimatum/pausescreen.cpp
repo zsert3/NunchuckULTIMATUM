@@ -11,8 +11,7 @@ int release = 0;
 
 void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour)
 {	
-	cbuttonPushed(lcd, watercolour, landcolour, tekstcolour);
-
+	c_Button = cbuttonPushed();
 	if (c_Button == 0)
 	{
 		drawpausescreen(lcd, watercolour, landcolour, tekstcolour);  
@@ -43,7 +42,7 @@ void drawpausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstco
 
 void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour) // Here we check if the touchscreen is pushed
 {
-	cbuttonPushed(lcd, watercolour, landcolour, tekstcolour);
+	c_Button = cbuttonPushed();
 	// check if c_buttom button has been released
 	if (c_Button == 1) {
 		release = 1;
@@ -82,28 +81,11 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 			pushedPauseScreen = 1;
 			placeButton(lcd, watercolour, tekstcolour, "MAIN MENU", getXwaardeButtons(), 210, getWidthButtons(), 160);
 			scoreCalculator(getScore());
-			resetScore();
-			resetLives();
 			setGameStarted(0);
 			setpushed(0);
 			drawMenuScreen(lcd, watercolour, landcolour, tekstcolour);
 			gamePaused = 0;
 		}
-	}
-}
-
-void cbuttonPushed(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour)
-{
-	nunchuckGetData();  // Reviving the state of the C Button of the nunchuck
-	c_Button = nunchuckGetc_button();
-
-	if ((c_Button >> 1) & 1)  // determing the state of the C button
-	{
-		c_Button = 1;
-	}
-	else
-	{
-		c_Button = 0;
 	}
 }
 

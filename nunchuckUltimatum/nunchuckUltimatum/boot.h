@@ -12,7 +12,7 @@
 #include "obstacles.h"
 #include "game.h"
 void drawboot(MI0283QT9 lcd, int x, int y);
-void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour);
 
 #endif
 

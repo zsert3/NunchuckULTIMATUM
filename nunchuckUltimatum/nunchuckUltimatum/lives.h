@@ -15,7 +15,6 @@
 	void resetLives();
 	void blinkLed();
 	int getLives();
-	void setLives(uint8_t live);
 #endif
 
 

@@ -7,7 +7,7 @@
 
 uint8_t nunchuck_buf[6];
 
-void nunchuckInit(void)
+void nunchuckInit()
 {
 	Wire.begin();                // join i2c bus as master
 	Wire.beginTransmission(0x52);// transmit to device 0x52
@@ -21,7 +21,7 @@ void nunchuckInit(void)
 	Wire.endTransmission();// stop transmitting
 }
 
-int nunchuckGetData(void)
+int nunchuckGetData()
 {
 	int cnt = 0;
 	Wire.requestFrom(0x52, 6);// request data from nunchuck
@@ -42,7 +42,7 @@ int nunchuckGetData(void)
 	return 0; //failure
 }
 
-void nunchuckSendRequest(void)
+void nunchuckSendRequest()
 {
 	Wire.beginTransmission(0x52);// transmit to device 0x52
 #if (ARDUINO >= 100)
@@ -53,19 +53,29 @@ void nunchuckSendRequest(void)
 	Wire.endTransmission();// stop transmitting
 }
 
-int nunchuckGetJoyX(void)
+int nunchuckGetJoyX()
 {
 	return nunchuck_buf[0];
 }
 
-int nunchuckGetJoyY(void)
+int nunchuckGetJoyY()
 {
 	return nunchuck_buf[1];
 }
 
-int nunchuckGetc_button(void)
+int cbuttonPushed()
 {
-	return nunchuck_buf[5];
+	nunchuckGetData();  // Reviving the state of the C Button of the nunchuck
+	int c_Button = nunchuck_buf[5];
+
+	if ((c_Button >> 1) & 1)  // determing the state of the C button
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
 }
 
 char nunchuckDecodeByte(char x)

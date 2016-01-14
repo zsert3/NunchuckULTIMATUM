@@ -10,12 +10,12 @@
 #endif
 #include <Wire\Wire.h>
 
-void nunchuckInit(void);
-int nunchuckGetData(void);
-void nunchuckSendRequest(void);
-int nunchuckGetJoyX(void);
-int nunchuckGetJoyY(void);
-int nunchuckGetc_button(void);
+void nunchuckInit();
+int nunchuckGetData();
+void nunchuckSendRequest();
+int nunchuckGetJoyX();
+int nunchuckGetJoyY();
+int cbuttonPushed();
 char nunchuckDecodeByte(char x);
 
 #endif

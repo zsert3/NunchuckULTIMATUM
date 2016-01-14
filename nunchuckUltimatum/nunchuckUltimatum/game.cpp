@@ -12,10 +12,11 @@ uint8_t newloc = 1;
 void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
 {
 	nunchuckInit();
-	resetBoat(lcd,watercolour, landcolour, tekstColour);
+	resetBoat(lcd,watercolour, landcolour);
 	ledInit();
 	resetLives();
 	resetObstaclespeed();
+	resetScore();
 	
 	////countdown for game
 	//for (int b = 3; b >= 1; b--)
@@ -97,7 +98,7 @@ void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int wate
 		//check if loctation of the boat is the same as the obstacel
 		if(blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
 			//reset everything from the game if the player has no lives
-			resetBoat(lcd, watercolour, landcolour, tekstColour);
+			resetBoat(lcd, watercolour, landcolour);
 			if (getLives() >= 3) {
 				scoreCalculator(getScore());
 				resetLives();

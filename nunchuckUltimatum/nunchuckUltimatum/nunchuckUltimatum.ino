@@ -31,7 +31,6 @@ int watercolour = RGB(100, 149, 237); //waterkleur
 int landcolour = RGB(154, 205, 50); //landkleur
 int tekstColour = RGB(160, 82, 45); //tekstkleur
 int treecolour = RGB(139, 69, 0); //boomkleur
-int c_button = 0;
 
 int main()
 {

@@ -4,7 +4,7 @@
 
 #include "tutorial.h"
 
-void basicscreenTutorial(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)  // The tutorial screens gets drawed here
+void basicscreenTutorial(MI0283QT9 lcd, int watercolour, int tekstColour)  // The tutorial screens gets drawed here
 {
 	lcd.fillRect(10, 0, 220, 320, watercolour);
 	lcd.drawText(60, 10, "TUTORIAL", tekstColour, watercolour, 2);
@@ -21,3 +21,5 @@ void basicscreenTutorial(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 	lcd.drawText(70, 220, "ENJOY!", tekstColour, watercolour, 2);	
 	drawboot(lcd, 110, 250);
 }
+
+

@@ -8,10 +8,9 @@
 #else
 	#include "WProgram.h"
 #endif
+#include <MI0283QT9\MI0283QT9.h>
 #include "highscores.h"
 #include "tutorial.h"
-#include <MI0283QT9\MI0283QT9.h>
-#include "pausescreen.h"
 #include "settings.h"
 #include "button.h"
 

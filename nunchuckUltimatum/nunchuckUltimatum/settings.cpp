@@ -9,7 +9,7 @@ int setting = 0;
 
 
 
-void placeSlider(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour, int lcX, int lcY,int prevBrightness) {
+void placeSlider(MI0283QT9 lcd, int landcolour, int tekstColour, int lcX, int lcY,int prevBrightness) {
 	
 	int slidersizeX = 160;
 	int slidersizeY = 40;
@@ -72,7 +72,7 @@ void touchScreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 			prevBrightness = getBrightnes();
 			setBrightnes(getMaxbrightnes() / ((200.0-40.0)/(pushX -40)), lcd);
 			
-			placeSlider(lcd, watercolour, landcolour, tekstcolour, 40, 180, prevBrightness);
+			placeSlider(lcd, landcolour, tekstcolour, 40, 180, prevBrightness);
 		}
 
 		//back button
@@ -96,7 +96,7 @@ void basicscreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 	placeButton(lcd, landcolour, tekstcolour, "", getXwaardeButtons(), 160, 60, getButtonLength());
 	//sets text above slider
 	lcd.drawText(80, 170, "HELDERHEID", tekstcolour, landcolour, 1);
-	placeSlider(lcd, watercolour, landcolour, tekstcolour, getXwaardeButtons(), 180,0);
+	placeSlider(lcd, landcolour, tekstcolour, getXwaardeButtons(), 180,0);
 	//draws back button from mainMenu.ccp
 	placeButton(lcd, landcolour, tekstcolour, "BACK", 0, 290, 30, 240);
 

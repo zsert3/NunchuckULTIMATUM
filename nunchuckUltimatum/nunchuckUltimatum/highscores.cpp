@@ -36,7 +36,7 @@ void scoreCalculator(int ns) {
 
 
 
-void basicscreenHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
+void basicscreenHighScores(MI0283QT9 lcd, int watercolour, int tekstColour)
 {
 	//get scores from EEPROM
 	int score[] = { 0,0,0,0,0 };	

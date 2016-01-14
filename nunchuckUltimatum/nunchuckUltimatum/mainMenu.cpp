@@ -42,7 +42,7 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour
 		{
 			pushed = 1;
 			placeButton(lcd, watercolour, tekstcolour, "HIGHSCORE", getXwaardeButtons(), 125, getWidthButtons(), getButtonLength());
-			basicscreenHighScores(lcd, watercolour, landcolour, tekstcolour);
+			basicscreenHighScores(lcd, watercolour, tekstcolour);
 			placeButton(lcd, landcolour, tekstcolour, "BACK", 0, 290, 30, 240);
 		}
 		//tutorial button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 en y 190 t/m 230
@@ -50,7 +50,7 @@ void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour
 		{
 			pushed = 1;
 			placeButton(lcd, watercolour, tekstcolour, "TUTORIAL", getXwaardeButtons(), 190, getWidthButtons(), getButtonLength());
-			basicscreenTutorial(lcd, watercolour, landcolour, tekstcolour);
+			basicscreenTutorial(lcd, watercolour, tekstcolour);
 			placeButton(lcd, landcolour, tekstcolour, "BACK", 0, 290, 30, 240);
 		}
 		//settings button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 en y 255 t/m 292

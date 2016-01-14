@@ -10,5 +10,5 @@
 #include <avr/io.h>
 #include <EEPROM.h>
 
-void basicscreenHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void basicscreenHighScores(MI0283QT9 lcd, int watercolour, int tekstColour);
 void scoreCalculator(int ns);

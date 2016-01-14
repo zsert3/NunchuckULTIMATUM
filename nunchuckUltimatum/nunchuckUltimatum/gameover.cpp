@@ -29,9 +29,7 @@ void touchScreenGameOver(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 		{
 			placeButton(lcd, watercolour, tekstcolour, "RETRY", getXwaardeButtons(), 140, getWidthButtons(), 160);
 			GameOverPushed = 1;
-			resetLives();
 			setGameStarted(1);
-			resetObstaclespeed();
 			lcd.fillRect(10, 0, 220, 320, watercolour);
 		}
 		//checked if there is a push between x 40 t/m 200 en y 210 t/m 250

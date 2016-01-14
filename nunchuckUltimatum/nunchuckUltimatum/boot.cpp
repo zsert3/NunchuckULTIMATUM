@@ -14,7 +14,7 @@ void drawboot(MI0283QT9 lcd, int x, int y) {
 	lcd.fillTriangle(x, y + lengte / 2 - (breete + lengte) / 12 + mastPositie, x + breete - 1, y + lengte / 2 - (breete + lengte) / 12 + mastPositie, x + breete / 2, y - 2 + lengte / 2 - (breete + lengte) / 12 + mastPositie, RGB(255, 255, 255));
 }
 
-void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour) {
+void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour) {
 	resetObstacles();
 	setNewloc(1);
 	lcd.fillRect(230, 0, 10, 320, landcolour);
