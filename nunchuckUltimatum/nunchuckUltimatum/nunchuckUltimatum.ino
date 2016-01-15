@@ -4,14 +4,7 @@
  Author:	Zsert
 */
 //scherm includes
-#include "button.h"
-#include "score.h"
-#include "obstacles.h"
-#include "gameover.h"
-#include "lives.h"
-#include "highscores.h"
 #include "mainMenu.h"
-#include "tutorial.h"
 #include "pausescreen.h"
 #include "game.h"
 //avr includes
@@ -24,7 +17,6 @@
 #include <SPI.h>
 #include <digitalWriteFast.h>
 #include <EEPROM.h>
-#include <eepromManager.h>
 
 MI0283QT9 lcd;
 int watercolour = RGB(100, 149, 237); //waterkleur
