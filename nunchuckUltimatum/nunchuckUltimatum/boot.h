@@ -8,11 +8,11 @@
 #else
 	#include "WProgram.h"
 #endif
-#include <MI0283QT9\MI0283QT9.h>
+#include <MI0283QT9.h>
 #include "obstacles.h"
 #include "game.h"
 void drawboot(MI0283QT9 lcd, int x, int y);
-void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour);
+void resetBoat(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour);
 
 #endif
 

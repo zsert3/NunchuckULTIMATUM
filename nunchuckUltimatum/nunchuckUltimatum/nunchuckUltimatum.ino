@@ -19,10 +19,10 @@
 #include <EEPROM.h>
 
 MI0283QT9 lcd;
-int watercolour = RGB(100, 149, 237); //waterkleur
-int landcolour = RGB(154, 205, 50); //landkleur
-int tekstColour = RGB(160, 82, 45); //tekstkleur
-int treecolour = RGB(139, 69, 0); //boomkleur
+int16_t watercolour = RGB(100, 149, 237); //waterkleur
+int16_t landcolour = RGB(154, 205, 50); //landkleur
+int16_t tekstcolour = RGB(160, 82, 45); //tekstkleur
+int16_t treecolour = RGB(139, 69, 0); //boomkleur
 
 int main()
 {
@@ -33,28 +33,27 @@ int main()
 	lcd.touchRead();
 	lcd.setOrientation(90);
 	lcd.fillScreen(landcolour);
-	drawMenuScreen(lcd, watercolour, landcolour, tekstColour);//tekent het menuscherm
-	int i = 0;
+	drawMenuScreen(lcd, watercolour, landcolour, tekstcolour);//tekent het menuscherm
+	int8_t i = 0;
 	while (1)
 	{
 		
 		if (getGameStarted() != 1)//checkt als de game gestart is
 		{
-			touchScreen(lcd, watercolour, landcolour, tekstColour);//dit zorgt s
+			touchScreen(lcd, watercolour, landcolour, tekstcolour);//dit zorgt s
 		}
-		//setGameStarted(0);
 		if (getGameStarted() == 1)
 		{
 			
 			if (i == 0)
 			{
-				gameInitialisation(lcd, watercolour, landcolour, tekstColour);//game initialzation
+				gameInitialisation(lcd, watercolour, landcolour, tekstcolour);//game initialzation
 				i = 1;
 			}
 			do
 			{
-				game(lcd, watercolour, treecolour, landcolour, tekstColour);
-				pausescreen(lcd, watercolour, landcolour, tekstColour);
+				game(lcd, watercolour, treecolour, landcolour, tekstcolour);
+				pausescreen(lcd, watercolour, landcolour, tekstcolour);
 			} while (getGameStarted() == 1);
 			i = 0;
 		}

@@ -8,16 +8,16 @@
 #else
 	#include "WProgram.h"
 #endif
-#include <MI0283QT9\MI0283QT9.h>
+#include <MI0283QT9.h>
 #include "highscores.h"
 #include "tutorial.h"
 #include "settings.h"
 #include "button.h"
 
-void drawMenuScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
-void touchScreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
-int getGameStarted(void);
-void setGameStarted(int GameSTarted);
-void setpushed(int Pushed);
+void drawMenuScreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
+void touchScreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
+int8_t getGameStarted(void);
+void setGameStarted(int8_t GameSTarted);
+void setpushed(int8_t Pushed);
 #endif
 

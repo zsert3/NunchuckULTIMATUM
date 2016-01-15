@@ -21,9 +21,9 @@ void nunchuckInit()
 	Wire.endTransmission();// stop transmitting
 }
 
-int nunchuckGetData()
+int8_t nunchuckGetData()
 {
-	int cnt = 0;
+	int8_t cnt = 0;
 	Wire.requestFrom(0x52, 6);// request data from nunchuck
 	while (Wire.available()) {
 		// receive byte as an integer

@@ -3,13 +3,13 @@
 // 
 
 #include "pausescreen.h"
-int pushedPauseScreen = 0;
-int c_Button;
-int gamePaused;
-int release = 0;
+int8_t pushedPauseScreen = 0;
+int8_t c_Button;
+int8_t gamePaused;
+int8_t release = 0;
 
 
-void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour)
+void pausescreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour)
 {	
 	c_Button = cbuttonPushed();
 	if (c_Button == 0)
@@ -30,7 +30,7 @@ void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour
 	c_Button = 0;	
 }
 
-void drawpausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour)  // Here the pausescreen gets drawed
+void drawpausescreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour)  // Here the pausescreen gets drawed
 {
 	lcd.fillRect(10, 0, 220, 320, watercolour);
 	lcd.drawText(75, 35, "PAUSED", tekstcolour, watercolour, 2);
@@ -40,7 +40,7 @@ void drawpausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstco
 	placeButton(lcd, landcolour, tekstcolour, "MAIN MENU", getXwaardeButtons(), 210, getWidthButtons(), 160);
 }
 
-void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour) // Here we check if the touchscreen is pushed
+void touchScreenPauseMenu(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour) // Here we check if the touchscreen is pushed
 {
 	c_Button = cbuttonPushed();
 	// check if c_buttom button has been released
@@ -61,8 +61,8 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 
 	if (lcd.touchRead())
 	{
-		int pushX = lcd.touchX();
-		int pushY = lcd.touchY();
+		int16_t pushX = lcd.touchX();
+		int16_t pushY = lcd.touchY();
 		pushedPauseScreen = 0;
 
 		if (pushX >= getXwaardeButtons() && pushX <= 200 && pushY >= 140 && pushY <= 180 && pushedPauseScreen == 0)
@@ -89,7 +89,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int te
 	}
 }
 
-void setPauseScreenPushed(int pausePushed)  //We have to set pausePused back to 0 if we want the touchscreen to work the next time we get to the paudescreen
+void setPauseScreenPushed(int8_t pausePushed)  //We have to set pausePused back to 0 if we want the touchscreen to work the next time we get to the paudescreen
 {
 	pushedPauseScreen = pausePushed;
 }

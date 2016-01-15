@@ -11,7 +11,7 @@
 #include <Wire\Wire.h>
 
 void nunchuckInit();
-int nunchuckGetData();
+int8_t nunchuckGetData();
 void nunchuckSendRequest();
 int nunchuckGetJoyX();
 int nunchuckGetJoyY();

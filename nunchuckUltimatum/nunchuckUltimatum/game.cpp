@@ -8,7 +8,7 @@ int blocationy = 270;
 uint8_t newloc = 1;
 
 
-void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
+void gameInitialisation(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour)
 {
 	nunchuckInit();
 	
@@ -24,13 +24,13 @@ void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int teks
 	//	for (int i = 0; i <= 400; i += 40)
 	//	{
 	//		lcd.fillRect(10, i - 40, 220, 40, watercolour);
-	//		lcd.drawInteger(90, i, b, 10, tekstColour, watercolour, 10);
+	//		lcd.drawInteger(90, i, b, 10, tekstcolour, watercolour, 10);
 	//	}
 	//}
 }
 
 
-void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int tekstcolour)
+void game(MI0283QT9 lcd, int16_t watercolour, int16_t treecolour, int16_t landcolour, int16_t tekstcolour)
 {
 	nunchuckGetData();
 	int joyx = nunchuckGetJoyX();
@@ -94,7 +94,7 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 	
 
 
-void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int watercolour, int landcolour, int tekstColour) {
+void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int16_t watercolour, int16_t landcolour, int16_t tekstcolour) {
 		//check if loctation of the boat is the same as the obstacel
 		if(blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
 			//reset everything from the game if the player has no lives
@@ -105,7 +105,7 @@ void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int wate
 				setGameStarted(0);
 				setpushed(0);
 			
-				basicschermGameOver(lcd, watercolour, landcolour, tekstColour);
+				basicschermGameOver(lcd, watercolour, landcolour, tekstcolour);
 				resetScore();
 				return;
 			}
@@ -135,7 +135,7 @@ void setVisable() {
 }
 
 
-void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour) {
+void resetBoat(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour) {
 	resetObstacles();
 	setVisable();
 	lcd.fillRect(230, 0, 10, 320, landcolour);

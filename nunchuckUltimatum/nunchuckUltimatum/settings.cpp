@@ -2,14 +2,14 @@
 // 
 // 
 #include "settings.h"
-int setting = 0;
+int8_t setting = 0;
 
 //Gerard van Turennout
 
 
 
 
-void placeSlider(MI0283QT9 lcd, int landcolour, int tekstColour, int lcX, int lcY,int prevBrightness) {
+void placeSlider(MI0283QT9 lcd, int16_t landcolour, int16_t tekstcolour, int lcX, int lcY,int prevBrightness) {
 	
 	int slidersizeX = 160;
 	int slidersizeY = 40;
@@ -39,20 +39,20 @@ void placeSlider(MI0283QT9 lcd, int landcolour, int tekstColour, int lcX, int lc
 		//draws back ground
 		lcd.fillRect(lcX, lcY+(slidersizeY/4), slidersizeX, slidersizeY/2+ barthickness, landcolour);
 		//draw slider rect
-		lcd.drawRect(lcX+(slidersizeX-barLength)/2-1, lcY + (nobsize + barthickness) / 2-1, barLength+3, nobsize+2, tekstColour);
+		lcd.drawRect(lcX+(slidersizeX-barLength)/2-1, lcY + (nobsize + barthickness) / 2-1, barLength+3, nobsize+2, tekstcolour);
 	}
 	//draws nob
 	//calculates pixels removed from left border based on maximum brightness compared to total bar length
 	int size = barLength /(900.0 / currentBrightness);
-	lcd.fillRect(lcX+ (slidersizeX - barLength)/2+ size, lcY + (nobsize+ barthickness) / 2, nobsize/2, nobsize,  tekstColour);
+	lcd.fillRect(lcX+ (slidersizeX - barLength)/2+ size, lcY + (nobsize+ barthickness) / 2, nobsize/2, nobsize,  tekstcolour);
 	
 }
 
 // Here we check if the touchscreen is pushed
-void touchScreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour){ 
+void touchScreenSettings(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour){ 
 	if (lcd.touchRead()){
-		int pushX = lcd.touchX();
-		int pushY = lcd.touchY();
+		int16_t pushX = lcd.touchX();
+		int16_t pushY = lcd.touchY();
 		int prevBrightness;
 		//button touch sensors
 		
@@ -86,7 +86,7 @@ void touchScreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 	}
 }
 //draws settings menu
-void basicscreenSettings(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour){
+void basicscreenSettings(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour){
 	lcd.fillRect(10, 0, 220, 320, watercolour);
 	lcd.drawText(60, 10, "SETTINGS", tekstcolour, watercolour, 2);
 	//turns on the loop

@@ -9,14 +9,14 @@
 	#include "WProgram.h"
 #endif
 #include <MI0283QT9.h>
-void placeButton(MI0283QT9 lcd, int backgroundcolour, int tekstcolour, char *text, int lcX, int lcY, int buttonsizeY, int buttonsizeX);
-int getWidthButtons();
-int getXwaardeButtons();
-int getButtonLength();
-int getButton1X();
-int getButton2X();
-int getButton3X();
-int getButton4X();
+void placeButton(MI0283QT9 lcd, int16_t backgroundcolour, int16_t tekstcolour, char *text, uint8_t lcX, uint16_t lcY, uint8_t buttonsizeY, uint8_t buttonsizeX);
+uint8_t getWidthButtons();
+uint8_t getXwaardeButtons();
+uint8_t getButtonLength();
+uint8_t getButton1X();
+uint8_t getButton2X();
+uint8_t getButton3X();
+uint8_t getButton4X();
 
 #endif
 

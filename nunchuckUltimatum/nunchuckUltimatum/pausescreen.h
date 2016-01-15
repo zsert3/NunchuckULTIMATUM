@@ -17,9 +17,9 @@
 
 #endif
 
-void pausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour);
-void drawpausescreen(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
-void touchScreenPauseMenu(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
-void setPauseScreenPushed(int pausePushed);
+void pausescreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
+void drawpausescreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
+void touchScreenPauseMenu(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
+void setPauseScreenPushed(int8_t pausePushed);
 
 

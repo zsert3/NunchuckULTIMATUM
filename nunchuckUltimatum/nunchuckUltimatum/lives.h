@@ -14,7 +14,7 @@
 	void removeLive();
 	void resetLives();
 	void blinkLed();
-	int getLives();
+	int8_t getLives();
 #endif
 
 

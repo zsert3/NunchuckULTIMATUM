@@ -11,8 +11,8 @@
 #include <MI0283QT9.h>
 #include "mainMenu.h"
 
-void basicschermGameOver(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
-void touchScreenGameOver(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour);
+void basicschermGameOver(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
+void touchScreenGameOver(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
 
 #endif
 

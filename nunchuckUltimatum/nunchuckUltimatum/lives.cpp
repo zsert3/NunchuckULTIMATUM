@@ -29,7 +29,7 @@ void resetLives() {
 	PORTC &= ~(7 << PORTC0);
 }
 
-int getLives() {
+int8_t getLives() {
 	return lives;
 }
 

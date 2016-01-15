@@ -1,8 +1,8 @@
 #include "gameover.h"
-int GameOverPushed = 0;
+int8_t GameOverPushed = 0;
 
 //draw gameover screen
-void basicschermGameOver(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour)
+void basicschermGameOver(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour)
 {
 	GameOverPushed = 0;
 	lcd.fillRect(10, 0, 220, 320, watercolour);
@@ -17,13 +17,13 @@ void basicschermGameOver(MI0283QT9 lcd, int watercolour, int landcolour, int tek
 	} while (!GameOverPushed);
 }
 
-void touchScreenGameOver(MI0283QT9 lcd, int watercolour, int landcolour, int tekstcolour)
+void touchScreenGameOver(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour)
 {
 
 	if (lcd.touchRead())
 	{
-		int pushX = lcd.touchX();
-		int pushY = lcd.touchY();
+		int16_t pushX = lcd.touchX();
+		int16_t pushY = lcd.touchY();
 		//checked if there is a push between x 40 t/m 200 en y 140 t/m 180
 		if (pushX >= getXwaardeButtons() && pushX <= 200 && pushY >= 140 && pushY <= 180 && GameOverPushed == 0)
 		{
