@@ -2,7 +2,7 @@
 
 
 #include "highscores.h"
-#include "eepromManager.h"
+
 
 //ns = new score
 void scoreCalculator(int ns) {

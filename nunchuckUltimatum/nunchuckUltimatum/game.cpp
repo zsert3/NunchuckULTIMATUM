@@ -2,8 +2,7 @@
 #include "game.h"
 
 
-int joyx;
-int joyy;
+
 int blocationx = 110;
 int blocationy = 270;
 uint8_t newloc = 1;
@@ -12,6 +11,7 @@ uint8_t newloc = 1;
 void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
 {
 	nunchuckInit();
+	
 	resetBoat(lcd,watercolour, landcolour);
 	ledInit();
 	resetLives();
@@ -33,8 +33,8 @@ void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int teks
 void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int tekstcolour)
 {
 	nunchuckGetData();
-	joyx = nunchuckGetJoyX();
-	joyy = nunchuckGetJoyY();
+	int joyx = nunchuckGetJoyX();
+	int joyy = nunchuckGetJoyY();
 	
 	//nunchuck up
 	if (joyy > 145) {
@@ -89,7 +89,7 @@ void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int te
 	for (uint8_t i = 0; i < 5; i++) {
 		checkCollision(lcd, getObstaclex(i), getObstacley(i), getObstacles(i), watercolour, landcolour, tekstcolour);
 	}
-	}
+}
 	
 	
 
@@ -116,10 +116,7 @@ void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int wate
 	}
 }
 
-void setNewloc(int loc)
-{
-	newloc = loc;
-}
+
 
 void setBlocationX(int Blocationx)
 {
@@ -135,4 +132,14 @@ void setBlocationY(int Blocationy)
 
 void setVisable() {
 	newloc = 1;
+}
+
+
+void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour) {
+	resetObstacles();
+	setVisable();
+	lcd.fillRect(230, 0, 10, 320, landcolour);
+	lcd.fillRect(10, 0, 220, 320, watercolour);
+	setBlocationX(110);
+	setBlocationY(270);
 }
