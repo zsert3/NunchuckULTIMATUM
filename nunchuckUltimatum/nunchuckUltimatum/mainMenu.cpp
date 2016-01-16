@@ -28,14 +28,14 @@ void touchScreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t
 		setPauseScreenPushed(0);
 
 		//the pushed variable is a value which is used to check if a button is pressed or not
-		//start game button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 en y 60 t/m 100
+		//start game button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 and y 60 t/m 100
 		if (pushX >= getXwaardeButtons() && pushX <= getXwaardeButtons() + getButtonLength() && pushY >= getButton1X() && pushY <= getButton1X() + getWidthButtons() && pushed == 0)
 		{
 			pushed = 1;
 			placeButton(lcd, watercolour, tekstcolour, "START GAME", getXwaardeButtons(), 60, getWidthButtons(), getButtonLength());
 			gameStarted = 1;
 		}
-		//hightscore button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 en y 125 t/m 165
+		//hightscore button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 and y 125 t/m 165
 		if (pushX >= getXwaardeButtons() && pushX <= getXwaardeButtons() + getButtonLength() && pushY >= getButton2X() && pushY <= getButton2X() + getWidthButtons() && pushed == 0)
 		{
 			pushed = 1;
@@ -43,7 +43,7 @@ void touchScreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t
 			basicscreenHighScores(lcd, watercolour, tekstcolour);
 			placeButton(lcd, landcolour, tekstcolour, "BACK", 0, 290, 30, 240);
 		}
-		//tutorial button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 en y 190 t/m 230
+		//tutorial button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 and y 190 t/m 230
 		if (pushX >= getXwaardeButtons() && pushX <= getXwaardeButtons() + getButtonLength() && pushY >= getButton3X() && pushY <= getButton3X() + getWidthButtons() && pushed == 0)
 		{
 			pushed = 1;
@@ -51,7 +51,7 @@ void touchScreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t
 			basicscreenTutorial(lcd, watercolour, tekstcolour);
 			placeButton(lcd, landcolour, tekstcolour, "BACK", 0, 290, 30, 240);
 		}
-		//settings button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 en y 255 t/m 292
+		//settings button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 and y 255 t/m 292
 		if (pushX >= getXwaardeButtons() && pushX <= getXwaardeButtons() + getButtonLength() && pushY >= getButton4X() && pushY <= getButton4X() + getWidthButtons() - 3 && pushed == 0)
 		{
 			pushed = 1;
@@ -59,7 +59,7 @@ void touchScreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t
 			basicscreenSettings(lcd, watercolour, landcolour, tekstcolour);
 		}
 		//if variable pushed is 1 only then is the back button available
-		//back button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 en y 293 t/m 320
+		//back button, checkt if the touchpanel is touched at the coordinates x 40 t/m 200 and y 293 t/m 320
 		if (pushX >= 10 && pushX <= 230 && pushY >= 293 && pushY <= 320 && pushed == 1)//??? check deze regel nog een keer op fouten
 		{
 			lcd.fillRect(10, 290, 220, 30, watercolour);
