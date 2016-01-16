@@ -20,37 +20,37 @@ void placeButton(MI0283QT9 lcd, int16_t backgroundcolour, int16_t tekstcolour, c
 	lcd.drawText(lcX + (buttonsizeX / 2) - (arrSize * 4), lcY + (buttonsizeY / 2) - 4, text, tekstcolour, backgroundcolour, 1);
 }
 
-uint8_t getWidthButtons()
+int8_t getWidthButtons()
 {
 	return widthButtons;
 }
 
-uint8_t getXwaardeButtons()
+int8_t getXwaardeButtons()
 {
 	return XwaardeButtons;
 }
 
-uint8_t getButtonLength()
+int8_t getButtonLength()
 {
 	return buttonLength;
 }
 
-uint8_t getButton1X()
+int8_t getButton1X()
 {
 	return button1X;
 }
 
-uint8_t getButton2X()
+int8_t getButton2X()
 {
 	return button2X;
 }
 
-uint8_t getButton3X()
+int8_t getButton3X()
 {
 	return button3X;
 }
 
-uint8_t getButton4X()
+int8_t getButton4X()
 {
 	return button4X;
 }

@@ -20,8 +20,8 @@
 void gameInitialisation(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
 void game(MI0283QT9 lcd, int16_t watercolour, int16_t treecolour, int16_t landcolour, int16_t tekstcolour);
 void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
-void setBlocationX(int Blocationx);
-void setBlocationY(int Blocationy);
+void setBlocationX(uint16_t Blocationx);
+void setBlocationY(uint16_t Blocationy);
 void setVisable();
 
 #endif

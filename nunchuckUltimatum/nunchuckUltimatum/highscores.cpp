@@ -7,7 +7,7 @@
 //ns = new score
 void scoreCalculator(int ns) {
 	int score[5];
-	int i;
+	uint8_t i;
 	getScore(score);
 	//if it is higher then the lowest score action must be taken
 	if (ns > score[0]) {

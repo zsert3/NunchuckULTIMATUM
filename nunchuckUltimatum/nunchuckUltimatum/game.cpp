@@ -3,8 +3,8 @@
 
 
 
-int blocationx = 110;
-int blocationy = 270;
+uint16_t blocationx = 110;
+uint16_t blocationy = 270;
 uint8_t newloc = 1;
 
 
@@ -118,13 +118,13 @@ void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int16_t 
 
 
 
-void setBlocationX(int Blocationx)
+void setBlocationX(uint16_t Blocationx)
 {
 	blocationx = Blocationx;
 }
 
 
-void setBlocationY(int Blocationy)
+void setBlocationY(uint16_t Blocationy)
 {
 	blocationy = Blocationy;
 }
