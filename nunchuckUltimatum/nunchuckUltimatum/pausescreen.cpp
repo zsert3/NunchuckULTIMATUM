@@ -20,10 +20,10 @@ void pauseScreen(MI0283QT9 lcd, int16_t waterColour, int16_t landColour, int16_t
 
 		while (gamePaused == 1)  // Here we start a loop to check if the touchscreen get pushed
 		{
-			if(gamePaused != 0)
-			{
+			//if(gamePaused != 0)
+			//{
 				touchScreenPauseMenu(lcd, waterColour, landColour, textColour);
-			}
+			//}
 		}
 		
 	}
@@ -47,7 +47,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int16_t waterColour, int16_t landColour
 	if (c_Button == 1) {
 		release = 1;
 	}
-	_delay_us(500);
+	_delay_us(1500);
 	// if c_button is pressed and has previously been released then it will continue the game and reset the values of the pauseScreen
 	if (c_Button == 0 && release == 1)
 	{
@@ -72,6 +72,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int16_t waterColour, int16_t landColour
 			placeButton(lcd, waterColour, textColour, "CONTINUE", getXValueButtons(), 140, getWidthButtons(), 160);
 			setVisable();
 			gamePaused = 0;
+			release = 0;
 			lcd.fillRect(10, 0, 220, 320, waterColour);	
 		}
 
@@ -83,6 +84,7 @@ void touchScreenPauseMenu(MI0283QT9 lcd, int16_t waterColour, int16_t landColour
 			scoreCalculator(getScore());
 			setGameStarted(0);
 			setPushed(0);
+			resetLives();
 			drawMenuScreen(lcd, waterColour, landColour, textColour);
 			gamePaused = 0;
 		}
