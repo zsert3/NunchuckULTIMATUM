@@ -57,9 +57,6 @@ int main()
 			} while (getGameStarted() == 1);
 			i = 0;
 		}
-		
-
-
 	}
 }
 

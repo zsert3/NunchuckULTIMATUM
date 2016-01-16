@@ -13,8 +13,8 @@ int8_t button3X = 190;
 int8_t button4X = 255;
 
 void placeButton(MI0283QT9 lcd, int16_t backgroundcolour, int16_t tekstcolour, char *text, uint8_t lcX, uint16_t lcY, uint8_t buttonsizeY, uint8_t buttonsizeX) {
+	//add text if there is any text
 	arrSize = strlen(text);
-	//toegevoegt als eventueele mee gegeven variable
 	lcd.fillRoundRect(lcX, lcY, buttonsizeX, buttonsizeY, 10, backgroundcolour);
 	//a letter is 4x4 pixels
 	lcd.drawText(lcX + (buttonsizeX / 2) - (arrSize * 4), lcY + (buttonsizeY / 2) - 4, text, tekstcolour, backgroundcolour, 1);

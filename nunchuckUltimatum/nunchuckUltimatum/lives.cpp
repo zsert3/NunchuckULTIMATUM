@@ -6,9 +6,9 @@ uint8_t blinkRed;
 
 void checkLives() {
 	switch (lives) {
-	case 1: PORTC |= (1 << PORTC0) | (1 << PORTC1) | (1 << PORTC2); break; //alle leds aan
-	case 2:	PORTC &= ~(1 << PORTC2); break; //gele en groene led aan
-	case 3: PORTC &= ~(1 << PORTC1); blinkLed(); break; //rode led knippert
+	case 1: PORTC |= (1 << PORTC0) | (1 << PORTC1) | (1 << PORTC2); break; //every led is on
+	case 2:	PORTC &= ~(1 << PORTC2); break; //yellow and green led turned on
+	case 3: PORTC &= ~(1 << PORTC1); blinkLed(); break; //red led is flashing
 	}
 }
 

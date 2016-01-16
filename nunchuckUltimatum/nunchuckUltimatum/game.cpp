@@ -17,16 +17,6 @@ void gameInitialisation(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, 
 	resetLives();
 	resetObstaclespeed();
 	resetScore();
-	
-	////countdown for game
-	//for (int b = 3; b >= 1; b--)
-	//{
-	//	for (int i = 0; i <= 400; i += 40)
-	//	{
-	//		lcd.fillRect(10, i - 40, 220, 40, watercolour);
-	//		lcd.drawInteger(90, i, b, 10, tekstcolour, watercolour, 10);
-	//	}
-	//}
 }
 
 
@@ -40,7 +30,7 @@ void game(MI0283QT9 lcd, int16_t watercolour, int16_t treecolour, int16_t landco
 	if (joyy > 145) {
 		if (blocationy > 0) {
 			blocationy -= 5;
-			lcd.fillRect(blocationx, blocationy + 25, 15, 5, watercolour);  //verwijder deel van boot dat veranderd
+			lcd.fillRect(blocationx, blocationy + 25, 15, 5, watercolour);  //removes part of the boat when it changes to another position
 			newloc = 1;
 		}
 	}
@@ -67,25 +57,17 @@ void game(MI0283QT9 lcd, int16_t watercolour, int16_t treecolour, int16_t landco
 		lcd.fillRect(blocationx + 15, blocationy, 5, 25, watercolour);
 		newloc = 1;
 	}
-
-	//teken boot als locatie veranderd
 	//draw boat if location changed
 	if (newloc == 1) {
 		drawboot(lcd, blocationx, blocationy);
 		newloc = 0;
-	}
-
-	
+	}	
 	drawScore(lcd,watercolour);
-
 	drawObstacles(lcd);
-
 	shiftObstacles(lcd);
-
 	checkLives();
-
-
-	//check obstakles if the boat touches them
+	
+	//check the obstacles if the boat touches them
 	for (uint8_t i = 0; i < 5; i++) {
 		checkCollision(lcd, getObstaclex(i), getObstacley(i), getObstacles(i), watercolour, landcolour, tekstcolour);
 	}

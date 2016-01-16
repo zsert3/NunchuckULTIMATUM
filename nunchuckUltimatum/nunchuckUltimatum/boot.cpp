@@ -1,7 +1,7 @@
 
 #include "boot.h"
 
-//deze functie zorgt ervoor dat de boot dynamisch op het scherm getekend kan worden
+//this function draws the boat dynamic on the LCD panel
 void drawboot(MI0283QT9 lcd, int x, int y) {
 	uint8_t breete = 15;
 	uint8_t lengte = 25;
