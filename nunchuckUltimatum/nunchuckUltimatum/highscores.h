@@ -7,9 +7,9 @@
 	#include "WProgram.h"
 #endif
 #include <MI0283QT9.h>
-//#include <avr\eeprom.h>
 #include <avr/io.h>
 #include <EEPROM.h>
+#include "eepromManager.h"
 
-void basisschermHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void basicscreenHighScores(MI0283QT9 lcd, int16_t waterColour, int16_t textColour);
 void scoreCalculator(int ns);

@@ -17,13 +17,12 @@
 #include "score.h"
 #include "gameover.h"
 
-void gameInitialisation(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
-void game(MI0283QT9 lcd, int watercolour, int treecolour, int landcolour, int tekstcolour);
-void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int watercolour, int landcolour, int tekstColour);
-void resetBoat(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour);
+void gameInitialisation(MI0283QT9 lcd, int16_t waterColour, int16_t landColour, int16_t textColour);
+void game(MI0283QT9 lcd, int16_t waterColour, int16_t treeColour, int16_t landColour, int16_t textColour);
+void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int16_t waterColour, int16_t landColour, int16_t textColour);
+void setBlocationX(uint16_t Blocationx);
+void setBlocationY(uint16_t Blocationy);
 void setVisable();
-void setBlocationX(int Blocationx);
-void setBlocationY(int Blocationy);
 
 #endif
 

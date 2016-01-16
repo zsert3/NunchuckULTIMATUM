@@ -8,13 +8,13 @@
 #else
 	#include "WProgram.h"
 #endif
-void nunchuckInit(void);
-int nunchuckGetData(void);
-void nunchuckSendRequest(void);
-int nunchuckGetJoyX(void);
-int nunchuckGetJoyY(void);
-int nunchuckGetc_button(void);
+#include <Wire.h>
+void nunchuckInit();
+int8_t nunchuckGetData();
+void nunchuckSendRequest();
+int nunchuckGetJoyX();
+int nunchuckGetJoyY();
+int cbuttonPushed();
 char nunchuckDecodeByte(char x);
 
-#endif//nunchuckData.h
-
+#endif

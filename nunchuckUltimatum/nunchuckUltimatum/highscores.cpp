@@ -2,12 +2,12 @@
 
 
 #include "highscores.h"
-#include "eepromManager.h"
 
-//ns = nieuw score
+
+//ns = new score
 void scoreCalculator(int ns) {
 	int score[5];
-	int i;
+	uint8_t i;
 	getScore(score);
 	//if it is higher then the lowest score action must be taken
 	if (ns > score[0]) {
@@ -36,20 +36,20 @@ void scoreCalculator(int ns) {
 
 
 
-void basisschermHighScores(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)
+void basicscreenHighScores(MI0283QT9 lcd, int16_t waterColour, int16_t textColour)
 {
-	//haal scores op uit EEPROM
+	//get scores from EEPROM
 	int score[] = { 0,0,0,0,0 };	
 	getScore(score);
-	int i = 4;
-	lcd.fillRect(10, 0, 220, 320, watercolour);
-	lcd.drawText(40, 10, "HIGHSCORES", tekstColour, watercolour, 2);
+	int8_t i = 4;
+	lcd.fillRect(10, 0, 220, 320, waterColour);
+	lcd.drawText(40, 10, "HIGHSCORES", textColour, waterColour, 2);
 
 	char str[15];
-	//schrijf scores weg als string en draw text
+	//write score as a string and draw it as a text
 	while (i >= 0) {
 		sprintf(str, "%d", score[i]);
-		lcd.drawText(50 , 50 + (120 - (i * 30)), str, tekstColour, watercolour, 2);
+		lcd.drawText(50 , 50 + (120 - (i * 30)), str, textColour, waterColour, 2);
 		i--;
 	}
 }

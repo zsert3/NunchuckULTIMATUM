@@ -1,5 +1,3 @@
-// obstacles.h
-
 #ifndef _OBSTACLES_h
 #define _OBSTACLES_h
 
@@ -14,7 +12,6 @@
 void drawObstacles(MI0283QT9 lcd);
 void shiftObstacles(MI0283QT9 lcd);
 void resetObstacles();
-void setObstaclespeed(uint8_t speed);
 void increaseObstaclespeed();
 void resetObstaclespeed();
 uint8_t getObstaclespeed();
@@ -23,11 +20,9 @@ uint16_t getObstacley(uint8_t i);
 uint8_t getObstacles(uint8_t i);
 
 typedef struct {
-	uint8_t osize;
-	uint16_t olocationy;
-	uint8_t olocationx;
-	uint8_t omoving;
-	int8_t odirection;
+	uint8_t oSize;
+	uint16_t oLocationy;
+	uint8_t oLocationx;
 }obstacles;
 
 #endif

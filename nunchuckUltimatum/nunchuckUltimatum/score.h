@@ -11,7 +11,7 @@
 
 #include <MI0283QT9\MI0283QT9.h>
 
-void drawScore(MI0283QT9 lcd);
+void drawScore(MI0283QT9 lcd, int16_t waterColour);
 void increaseScore();
 void resetScore();
 int getScore();

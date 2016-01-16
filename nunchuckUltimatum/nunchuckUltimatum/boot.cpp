@@ -1,15 +1,18 @@
 
 #include "boot.h"
 
-
-void tekenboot(MI0283QT9 lcd, int x, int y) {
-	uint8_t breete = 15;
-	uint8_t lengte = 25;
-	uint8_t stapgroote = 3;
-	uint8_t stap = 1;
-	lcd.drawRect(x, y, breete, lengte, RGB(0, 0, 0));
-	lcd.fillRect(x + 1, y + 1, breete - 2, lengte - 2, RGB(156, 102, 31));
-	int mastPositie = -2;
-	lcd.fillCircle(x + breete / 2, y + lengte / 2 + mastPositie, (breete + lengte) / 12, RGB(82, 82, 82));
-	lcd.fillTriangle(x, y + lengte / 2 - (breete + lengte) / 12 + mastPositie, x + breete - 1, y + lengte / 2 - (breete + lengte) / 12 + mastPositie, x + breete / 2, y - 2 + lengte / 2 - (breete + lengte) / 12 + mastPositie, RGB(255, 255, 255));
+//this function draws the boat dynamic on the LCD panel
+void drawBoat(MI0283QT9 lcd, int x, int y) {
+	uint8_t width = 15;
+	uint8_t length = 25;
+	//draw square
+	lcd.drawRect(x, y, width, length, RGB(0, 0, 0));
+	//draws line around the square
+	lcd.fillRect(x + 1, y + 1, width - 2, length - 2, RGB(156, 102, 31));
+	//can place the mast further backward on the boat
+	int8_t mastPosition = -2;
+	// draws mast
+	lcd.fillCircle(x + width / 2, y + length / 2 + mastPosition, (width + length) / 12, RGB(82, 82, 82));
+	//draws sail
+	lcd.fillTriangle(x, y + length / 2 - (width + length) / 12 + mastPosition, x + width - 1, y + length / 2 - (width + length) / 12 + mastPosition, x + width / 2, y - 2 + length / 2 - (width + length) / 12 + mastPosition, RGB(255, 255, 255));
 }

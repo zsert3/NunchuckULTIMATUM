@@ -4,26 +4,22 @@
 
 #include "tutorial.h"
 
-
-
-void basisschermTutorial(MI0283QT9 lcd, int watercolour, int landcolour, int tekstColour)  // The tutorial screens gets drawed here
+void basicscreenTutorial(MI0283QT9 lcd, int16_t waterColour, int16_t textColour)  // The tutorial screens gets drawed here
 {
-	lcd.fillRect(10, 0, 220, 320, watercolour);
-	lcd.drawText(60, 10, "TUTORIAL", tekstColour, watercolour, 2);
-	lcd.drawText(90, 40, "Welcome", tekstColour, watercolour, 1);
-	lcd.drawText(30, 55, "to aquatic vessel!", tekstColour, watercolour, 1);
-	lcd.drawText(30, 70, "Use the thumstick of", tekstColour, watercolour, 1);
-	lcd.drawText(30, 85, "the nunckuck to avoid", tekstColour, watercolour, 1);
-	lcd.drawText(30, 100, "incomming logs and", tekstColour, watercolour, 1);
-	lcd.drawText(30, 115, "the river banks.", tekstColour, watercolour, 1);
-	lcd.drawText(30, 130, "Press C to pause", tekstColour, watercolour, 1);
-	lcd.drawText(30, 145, "the game.", tekstColour, watercolour, 1);
-	lcd.drawText(30, 175, "Get that Highscore", tekstColour, watercolour, 1);
-	lcd.drawText(30, 190, "and goodluck!", tekstColour, watercolour, 1);
-	lcd.drawText(70, 220, "ENJOY!", tekstColour, watercolour, 2);
-	
-	tekenboot(lcd, 110, 250);
-	
-
-	
+	lcd.fillRect(10, 0, 220, 320, waterColour);
+	lcd.drawText(60, 10, "TUTORIAL", textColour, waterColour, 2);
+	lcd.drawText(90, 40, "Welcome", textColour, waterColour, 1);
+	lcd.drawText(30, 55, "to aquatic vessel!", textColour, waterColour, 1);
+	lcd.drawText(30, 70, "Use the thumstick of", textColour, waterColour, 1);
+	lcd.drawText(30, 85, "the nunckuck to avoid", textColour, waterColour, 1);
+	lcd.drawText(30, 100, "incomming logs and", textColour, waterColour, 1);
+	lcd.drawText(30, 115, "the river banks.", textColour, waterColour, 1);
+	lcd.drawText(30, 130, "Press C to pause", textColour, waterColour, 1);
+	lcd.drawText(30, 145, "the game.", textColour, waterColour, 1);
+	lcd.drawText(30, 175, "Get that Highscore", textColour, waterColour, 1);
+	lcd.drawText(30, 190, "and goodluck!", textColour, waterColour, 1);
+	lcd.drawText(70, 220, "ENJOY!", textColour, waterColour, 2);	
+	drawBoat(lcd, 110, 250);
 }
+
+
