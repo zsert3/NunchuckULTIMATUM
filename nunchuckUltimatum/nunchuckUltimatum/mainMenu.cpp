@@ -74,9 +74,9 @@ int8_t getGameStarted()
 	return gameStarted;
 }
 
-void setGameStarted(int8_t gameStarted)
+void setGameStarted(int8_t gameStarted1)
 {
-	gameStarted = gameStarted;
+	gameStarted = gameStarted1;
 }
 
 void setPushed(int8_t Pushed)
