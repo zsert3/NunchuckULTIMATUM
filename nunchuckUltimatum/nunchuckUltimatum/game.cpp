@@ -81,7 +81,7 @@ void checkCollision(MI0283QT9 lcd, uint8_t x, uint16_t y, uint8_t size, int16_t 
 		if(blocationy <= 0 || blocationx <= 11 || blocationx >= 211 || blocationy > 290 || blocationx > x - 15 && blocationx + 15 < x + size + 15 && ((y + 8 >= blocationy && y - 2 <= blocationy) || (y + 8 >= blocationy + 25 && y - 2 <= blocationy + 25) || (y + 8 >= blocationy + 12 && y - 2 <= blocationy + 12))) {
 			//reset everything from the game if the player has no lives
 			resetBoat(lcd, waterColour, landColour);
-			if (getLives() >= 3) {
+			if (getLives() >= 3) { //stop game if there are no lives left
 				scoreCalculator(getScore());
 				resetLives();
 				setGameStarted(0);
