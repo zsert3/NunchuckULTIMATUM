@@ -20,11 +20,9 @@ uint16_t getObstacley(uint8_t i);
 uint8_t getObstacles(uint8_t i);
 
 typedef struct {
-	uint8_t osize;
-	uint16_t olocationy;
-	uint8_t olocationx;
-	uint8_t omoving;
-	int8_t odirection;
+	uint8_t oSize;
+	uint16_t oLocationy;
+	uint8_t oLocationx;
 }obstacles;
 
 #endif

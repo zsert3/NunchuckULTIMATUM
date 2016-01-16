@@ -1,4 +1,4 @@
-// pausescreen.h
+// pauseScreen.h
 
 #ifndef _PAUSESCREEN_h
 #define _PAUSESCREEN_h
@@ -17,9 +17,9 @@
 
 #endif
 
-void pausescreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
-void drawpausescreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
-void touchScreenPauseMenu(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
+void pauseScreen(MI0283QT9 lcd, int16_t waterColour, int16_t landColour, int16_t textColour);
+void drawPauseScreen(MI0283QT9 lcd, int16_t waterColour, int16_t landColour, int16_t textColour);
+void touchScreenPauseMenu(MI0283QT9 lcd, int16_t waterColour, int16_t landColour, int16_t textColour);
 void setPauseScreenPushed(int8_t pausePushed);
 
 

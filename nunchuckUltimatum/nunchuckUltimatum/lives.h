@@ -8,7 +8,7 @@
 #else
 	#include "WProgram.h"
 #endif
-	#include "pausescreen.h"
+	#include "pauseScreen.h"
 	void checkLives();
 	void ledInit();
 	void removeLive();

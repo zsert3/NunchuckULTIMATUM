@@ -5,7 +5,7 @@
 */
 //scherm includes
 #include "mainMenu.h"
-#include "pausescreen.h"
+#include "pauseScreen.h"
 #include "game.h"
 //avr includes
 #include <avr/io.h>
@@ -19,10 +19,10 @@
 #include <EEPROM.h>
 
 MI0283QT9 lcd;
-int16_t watercolour = RGB(100, 149, 237); //waterkleur
-int16_t landcolour = RGB(154, 205, 50); //landkleur
-int16_t tekstcolour = RGB(160, 82, 45); //tekstkleur
-int16_t treecolour = RGB(139, 69, 0); //boomkleur
+int16_t waterColour = RGB(100, 149, 237); //waterkleur
+int16_t landColour = RGB(154, 205, 50); //landkleur
+int16_t textColour = RGB(160, 82, 45); //textkleur
+int16_t treeColour = RGB(139, 69, 0); //boomkleur
 
 int main()
 {
@@ -32,28 +32,28 @@ int main()
 	setBrightnes(getBrightnes(), lcd);
 	lcd.touchRead();
 	lcd.setOrientation(90);
-	lcd.fillScreen(landcolour);
-	drawMenuScreen(lcd, watercolour, landcolour, tekstcolour);//tekent het menuscherm
+	lcd.fillScreen(landColour);
+	drawMenuScreen(lcd, waterColour, landColour, textColour);//tekent het menuscherm
 	int8_t i = 0;
 	while (1)
 	{
 		
 		if (getGameStarted() != 1)//checkt als de game gestart is
 		{
-			touchScreen(lcd, watercolour, landcolour, tekstcolour);//dit zorgt s
+			touchScreen(lcd, waterColour, landColour, textColour);//dit zorgt s
 		}
 		if (getGameStarted() == 1)
 		{
 			
 			if (i == 0)
 			{
-				gameInitialisation(lcd, watercolour, landcolour, tekstcolour);//game initialzation
+				gameInitialisation(lcd, waterColour, landColour, textColour);//game initialzation
 				i = 1;
 			}
 			do
 			{
-				game(lcd, watercolour, treecolour, landcolour, tekstcolour);
-				pausescreen(lcd, watercolour, landcolour, tekstcolour);
+				game(lcd, waterColour, treeColour, landColour, textColour);
+				pauseScreen(lcd, waterColour, landColour, textColour);
 			} while (getGameStarted() == 1);
 			i = 0;
 		}

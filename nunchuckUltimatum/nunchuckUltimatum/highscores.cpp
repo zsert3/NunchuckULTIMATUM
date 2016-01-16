@@ -36,20 +36,20 @@ void scoreCalculator(int ns) {
 
 
 
-void basicscreenHighScores(MI0283QT9 lcd, int16_t watercolour, int16_t tekstcolour)
+void basicscreenHighScores(MI0283QT9 lcd, int16_t waterColour, int16_t textColour)
 {
 	//get scores from EEPROM
 	int score[] = { 0,0,0,0,0 };	
 	getScore(score);
 	int8_t i = 4;
-	lcd.fillRect(10, 0, 220, 320, watercolour);
-	lcd.drawText(40, 10, "HIGHSCORES", tekstcolour, watercolour, 2);
+	lcd.fillRect(10, 0, 220, 320, waterColour);
+	lcd.drawText(40, 10, "HIGHSCORES", textColour, waterColour, 2);
 
 	char str[15];
 	//write score as a string and draw it as a text
 	while (i >= 0) {
 		sprintf(str, "%d", score[i]);
-		lcd.drawText(50 , 50 + (120 - (i * 30)), str, tekstcolour, watercolour, 2);
+		lcd.drawText(50 , 50 + (120 - (i * 30)), str, textColour, waterColour, 2);
 		i--;
 	}
 }

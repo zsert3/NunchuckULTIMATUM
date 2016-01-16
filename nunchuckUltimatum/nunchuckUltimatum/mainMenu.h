@@ -14,10 +14,10 @@
 #include "settings.h"
 #include "button.h"
 
-void drawMenuScreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
-void touchScreen(MI0283QT9 lcd, int16_t watercolour, int16_t landcolour, int16_t tekstcolour);
+void drawMenuScreen(MI0283QT9 lcd, int16_t waterColour, int16_t landColour, int16_t textColour);
+void touchScreen(MI0283QT9 lcd, int16_t waterColour, int16_t landColour, int16_t textColour);
 int8_t getGameStarted(void);
 void setGameStarted(int8_t gameStarted);
-void setpushed(int8_t Pushed);
+void setPushed(int8_t Pushed);
 #endif
 

@@ -11,5 +11,5 @@
 #include <EEPROM.h>
 #include "eepromManager.h"
 
-void basicscreenHighScores(MI0283QT9 lcd, int16_t watercolour, int16_t tekstcolour);
+void basicscreenHighScores(MI0283QT9 lcd, int16_t waterColour, int16_t textColour);
 void scoreCalculator(int ns);

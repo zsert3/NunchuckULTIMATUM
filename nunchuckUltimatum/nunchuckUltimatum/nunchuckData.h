@@ -8,8 +8,7 @@
 #else
 	#include "WProgram.h"
 #endif
-#include <Wire\Wire.h>
-
+#include <Wire.h>
 void nunchuckInit();
 int8_t nunchuckGetData();
 void nunchuckSendRequest();
